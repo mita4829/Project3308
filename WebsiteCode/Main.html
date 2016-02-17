@@ -1,0 +1,16 @@
+<!--Main index page of website-->
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="MainCSS.css">
+        <script src="MainJS.js"></script>
+	</head>	
+	<body onload="onload()">
+        
+        <div id="userFormToSearchBooks">
+		<form id="userInputForm"><!--form for searching books-->
+			<input type="text" id="searchBar" placeholder=" Search by title of book" onkeydown="if(event.keyCode == 13){searchForBook(document.getElementById('searchBar').value);}"/><!-- onkeydown part triggers button click when the user hits return-->
+        </form>
+        </div>
+        
+	</body>
+</html>
