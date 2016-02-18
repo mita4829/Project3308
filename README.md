@@ -1,4 +1,4 @@
-# Title of Project
+# Norlin Book Lookup Mobile Application
 
 
 ## Project Description
@@ -25,24 +25,23 @@ Generalize the location of books. Simple code. One function, does one job, and d
 ## Requirements
 
 ### User requirements
-As a student, I want an easy way to find book. Time:9weeks
-As a user, I want the app to be conveient. Time:9weeks
-As a user, I want the instructions to be clear. Time:9weeks
-
+- As a student, I want an easy way to find book. Time: 9weeks
+- As a user, I want the app to be conveient. Time: 9weeks
+- As a user, I want the instructions to be clear. Time: 9weeks
 
 ### Function Requirements
-As developers, we need a database to store our data. Prority:1
-As developers, we want to be able to search for books on our database. Prority:2
-As developlers, create a route to the desired book. Prority:3
-As developers, allow navigation starting at several positions by showing a 360 degree view of the library. Prority:5
-As developers, we need to have a user-interface for the user to search for books. Prority:8
-
+- As developers, we need a database to store our data. Prority:1
+- As developers, we want to be able to search for books on our database. Prority:2
+- As developlers, create a route to the desired book. Prority:3
+- As developers, allow navigation starting at several positions by showing a 360 degree view of the library. Prority:5
+- As developers, we need to have a user-interface for the user to search for books. Prority:8
 
 ### Non-Functional requirements
-As a user, I want auto complete to help me find books faster. 
-As a developer and user, we want the panoramics to be clear. 
-As a user, I want the app to load fast. 
-As a user, I want auto-smooth transitions to different maps. 
+- As a user, I want auto complete to help me find books faster. 
+- As a developer and user, we want the panoramics to be clear. 
+- As a user, I want the app to load fast. 
+- As a user, I want auto-smooth transitions to different maps. 
+
 
 ## Methodology
 
@@ -59,14 +58,14 @@ The link to the project tracking software is [here.](https://github.com/mita4829
 
 ## Project Plan
 
-The link to the project tracking software is [here.](https://github.com/mita4829/Project3308.git)
+The link to the project tracking software is [here.](https://github.com/mita4829/Project3308/graphs/contributors)
 
 
 
 ## Group Members
 
-- Aidan Bohenick  ()
-- Dalton Marrow  ()
+- Aidan Bohenick (**aibo3269**)
+- Dalton Marrow (**daltonmcclain**)
 - Jeong Min Lee (**jele5104**)
 - Michael Tang (**mita4829**)
-- Owen Wattenmaker  ()
+- Owen Wattenmaker (**owattenmaker**)

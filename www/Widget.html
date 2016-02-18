@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #leaf{
+                position:absolute;
+                left:0px;
+                top:0px;
+            }
+        #pano{
+            position:absolute;
+            z-index:-1;
+            top:0px;
+            left:0px;
+            
+            width:100%;
+        }
+            </style>
+        </head>
+    <script>
+       
+        function requestXYZ(){
+            var batterySaver = false;
+            window.addEventListener("deviceorientation", function(event)
+                                    {
+                                    var x = Math.round(event.gamma);
+                                    var y = Math.round(event.beta);
+                                    var z = Math.round(event.alpha);
+                                    
+                                    if(x >= 20){
+                                    document.getElementById('pano').style.top = -18*z+"px";
+                                    }else if(x <= -20){
+                                    document.getElementById('pano').style.top = -18*(z+180)+"px";
+                                    }else if(x < 20 && x > -20){
+                                        if(!batterySaver){
+                                        alert("Phone placed on table detected, app will now save battery life by turing off panoramic mode while on table.");
+                                        batterySaver = true;
+                                        }
+                                    }
+                                    }, true);
+                                    
+        }
+    
+   
+        </script>
+<body onload="requestXYZ()">
+<p id='z'></p>
+    <img src="Panos/Archives.jpg" id="pano">
+</body>
+
+
+</html>
