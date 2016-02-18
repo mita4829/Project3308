@@ -22,13 +22,15 @@ Undecided
 ## Requirements
 
 ### User requirements
-user req
+Students can use their phones to guide them to a book.
 
 ### Function Requirements
-func req
+Search for books on our database.
+Create a route to the desired book.
+Allow navigation starting at several positions.
+Show a 360 degree view of the library.
 
 ### Non-Functional requirements
-non func req
 
 
 ## Methodology
