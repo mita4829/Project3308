@@ -2,11 +2,11 @@
 
 ## Group Members
 
-**Adian Bohenick**
-Daltom Marrow
-Jeong Lee
-Michael Tang
-Owen Wattenmaker
+- Adian Bohenick ()
+- Dalton Marrow ()
+- Jeong Min Lee (jele5104)
+- Michael Tang (mita4829)
+- Owen Wattenmaker ()
 
 
 ## Project Summary
