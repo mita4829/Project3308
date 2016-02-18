@@ -8,11 +8,13 @@ We are building a web application that works on iOS and Android browsers and wha
 
 ## Vision Statement 
 
-"A personal librarian, finding books made easy, all just on your phone."
+**"A personal librarian, finding books made easy, all just on your phone."**
+
 
 ## Motivation
 
-Finding books easier to find in Norlin. 
+We thought it would be great if we could find books more easily in Norlin Library
+
 
 ## Risks
 
@@ -21,6 +23,7 @@ Some risks are that we are exposed to new languages such as Javascript, MySQL, P
 ### Mitigation strategy for risks
 
 Generalize the location of books. Simple code. One function, does one job, and does it well. 
+
 
 ## Requirements
 
@@ -48,7 +51,6 @@ Generalize the location of books. Simple code. One function, does one job, and d
 Iterative process, with working new big features every 1-2 weeks.
 
 
-
 ## Project Tracking Software
 
 Github
@@ -59,7 +61,6 @@ The link to the project tracking software is [here.](https://github.com/mita4829
 ## Project Plan
 
 The link to the project tracking software is [here.](https://github.com/mita4829/Project3308/graphs/contributors)
-
 
 
 ## Group Members
