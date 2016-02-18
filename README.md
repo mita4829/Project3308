@@ -4,8 +4,8 @@
 
 - Adian Bohenick  ()
 - Dalton Marrow  ()
-- Jeong Min Lee  **jele5104**
-- Michael Tang  (mita4829)
+- Jeong Min Lee (**jele5104**)
+- Michael Tang (**mita4829**)
 - Owen Wattenmaker  ()
 
 
