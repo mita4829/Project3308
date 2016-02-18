@@ -62,6 +62,7 @@ The link to the Github Milestone is [here.](https://github.com/mita4829/Project3
 
 ## Project Plan
 
+![Project Plan](Project_Plan.png)
 
 
 ## Group Members
