@@ -53,9 +53,11 @@ Iterative process, with working new big features every 1-2 weeks.
 
 ## Project Tracking Software
 
-Github
+Github Issues & Milestones
 
-The link to the project tracking software is [here.](https://github.com/mita4829/Project3308.git)
+The link to the Github Issues is [here.](https://github.com/mita4829/Project3308/issues)
+
+The link to the Github Milestone is [here.](https://github.com/mita4829/Project3308/milestones?state=open)
 
 
 ## Project Plan
