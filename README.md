@@ -23,19 +23,19 @@ Undecided
 
 Some risks are that we are exposed to new languages such as Javascript, MySQL, PHP.
 
-### Mitigation strategy for risks
+#### Mitigation strategy for risks
 Undecided
 
 
 ## Requirements
 
-### User requirements
+#### User requirements
 user req
 
-### Function Requirements
+#### Function Requirements
 func req
 
-### Non-Functional requirements
+#### Non-Functional requirements
 non func req
 
 
