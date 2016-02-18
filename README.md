@@ -62,7 +62,7 @@ The link to the Github Milestone is [here.](https://github.com/mita4829/Project3
 
 ## Project Plan
 
-The link to the project tracking software is [here.](https://github.com/mita4829/Project3308/graphs/contributors)
+![Project Plan](Project_Plan.png)
 
 
 ## Group Members
