@@ -50,7 +50,7 @@ Undecided
 
 Github
 
-The link to the project tracking software is [here.](https://github.com/jele5104/Lee_CSCI2270_FinalProject/blob/master/FinalProject.txt)
+The link to the project tracking software is [here.](https://github.com/mita4829/Project3308.git)
 
 
 ## Project Plan
