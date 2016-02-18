@@ -58,7 +58,7 @@ The link to the project tracking software is [here.](https://github.com/mita4829
 
 ## Project Plan
 
-The link to the project tracking software is [here.](https://github.com/mita4829/Project3308.git)
+The link to the project tracking software is [here.](https://github.com/mita4829/Project3308/graphs/contributors)
 
 
 
