@@ -28,16 +28,29 @@ Undecided
 
 Some risks are that we are exposed to new languages such as Javascript, MySQL, PHP.
 
-- **Mitigation strategy for risks**
-    Undecided
+**Mitigation strategy for risks**
+- Undecided
 
-List of requirements for project:
-User requirements:
 
-Function Requirements:
+## Requirements
 
-Non-Functional requirements:
+- User requirements:
 
-Methodology: Undecided
+- Function Requirements:
 
-Tracking Software: Github
+- Non-Functional requirements:
+
+
+## Methodology
+
+Undecided
+
+
+## Project Tracking Software
+
+Github
+
+The link to the project tracking software is [here.](https://github.com/jele5104/Lee_CSCI2270_FinalProject/blob/master/FinalProject.txt)
+
+
+## Project Plan
