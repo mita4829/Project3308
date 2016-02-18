@@ -2,7 +2,7 @@
 
 ## Group Members
 
-Adian Bohenick
+**Adian Bohenick**
 Daltom Marrow
 Jeong Lee
 Michael Tang
