@@ -1,4 +1,4 @@
-# Title of Project: Undecided
+# Title of Project
 
 ## Group Members
 
