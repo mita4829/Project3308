@@ -53,7 +53,7 @@ project plan
 ## Group Members
 
 - Adian Bohenick  ()
-- Dalton Marrow  ()
+- Dalton Morrow  (**daltonmcclain**)
 - Jeong Min Lee (**jele5104**)
 - Michael Tang (**mita4829**)
 - Owen Wattenmaker  ()
