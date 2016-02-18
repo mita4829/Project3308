@@ -2,7 +2,11 @@
 
 ## Group Members
 
-Adian Bohenick, Daltom Marrow, Jeong Lee, Michael Tang, Owen Wattenmaker
+Adian Bohenick
+Daltom Marrow
+Jeong Lee
+Michael Tang
+Owen Wattenmaker
 
 
 ## Project Summary
