@@ -64,8 +64,8 @@ The link to the project tracking software is [here.](https://github.com/mita4829
 
 ## Group Members
 
-- Aidan Bohenick  ()
-- Dalton Marrow  ()
+- Aidan Bohenick (****)
+- Dalton Marrow (****)
 - Jeong Min Lee (**jele5104**)
 - Michael Tang (**mita4829**)
-- Owen Wattenmaker  ()
+- Owen Wattenmaker (**owattenmaker**)
