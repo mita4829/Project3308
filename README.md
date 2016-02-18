@@ -3,7 +3,7 @@
 
 ## Project Description
 
-We are building a web application that works on iOS and Android browsers and what it is, is a book finder for the Norlin library. Users type in a book name and their phones will use the built-in gyroscope to present an augmented reality map to guide the users to their book.
+We are building a web application to find books in the Norlin library. It will work on IOS or Android browsers. Users type in a book name and their phones will use the built-in gyroscope to present an augmented reality map to guide the users to their book.
 
 
 ## Vision Statement and Motivation
