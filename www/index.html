@@ -10,11 +10,18 @@
             <!--Put navigation buttons here e.g. <back>-->
             <p></p>
         </div>
+        
         <div id="userFormToSearchBooks">
 		<form id="userInputForm"><!--form for searching books-->
 			<input type="text" id="searchBar" placeholder=" Search by title of book" onkeydown="if(event.keyCode == 13){searchForBook(document.getElementById('searchBar').value);}"/><!-- onkeydown part triggers button click when the user hits return-->
         </form>
         </div>
+        
+        <div id="notMobile">
+            <img src="UIImages/NotMobile.jpg">
+            <p>Come back on your mobile device to view this site.</p>
+        </div>
+        
         <div id="footerBar">
             <p></p>
         <div>

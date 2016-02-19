@@ -4,8 +4,10 @@ html, body{
     width: 100%;
 }
 p{
-    color:black;
+    color:grey;
     font-weight:lighter;
+    font-family:Helvetica;
+    font-size:20px;
 }
 #userFormToSearchBooks{ /* position of the form */
     margin: auto;
@@ -22,14 +24,12 @@ p{
     outline-width: 1px;
     outline-color:rgba(178,178,178,1);
     font-size: 1em;
-    color:blacks;
+    color:black;
     font-weight:300; /* thickness of font */
 }
 #navigationBar{/* Header bar with all the UI buttons */
     position: absolute;
-    top:0px;
-    left:0px;
-    right:0px;
+    top:0px;left:0px;right:0px;
     max-height:20%;
     height:10%;
     width:110%;
@@ -40,9 +40,7 @@ p{
 }
 #footerBar{ /* Footer bar with other navaigation buttons */
     position: absolute;
-    bottom:0px;
-    left:0px;
-    right:0px;
+    bottom:0px;left:0px;right:0px;
     max-height:20%;
     height:10%;
     width:110%;
@@ -50,4 +48,8 @@ p{
     outline-style: solid;
     outline-width: 1px;
     outline-color:rgba(178,178,178,1);
+}
+#notMobile{
+    padding-top:40px;
+    text-align:center;
 }
