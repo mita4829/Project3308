@@ -68,7 +68,7 @@ The link to the Github Milestone is [here.](https://github.com/mita4829/Project3
 ## Group Members
 
 - Aidan Bohenick (**aibo3269**)
-- Dalton Marrow (**daltonmcclain**)
+- Dalton Morrow (**daltonmcclain**)
 - Jeong Min Lee (**jele5104**)
 - Michael Tang (**mita4829**)
 - Owen Wattenmaker (**owattenmaker**)
