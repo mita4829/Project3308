@@ -23,7 +23,9 @@ function searchForBook(userInput){ /* userInput is the name of the book the user
 
 function checkIfMobile(){
     var mobile = (/Android|webOS|iPhone|iPad|iPod|Windows Phone|Kindle|IEMobile/i.test(navigator.userAgent)); //return boolean: Check to see if it's a mobile device, if false, disable site.
-    if(!mobile){
+    if(mobile){
+        document.getElementById('notMobile').style.display = 'none';
+    }else{
         document.getElementById('userFormToSearchBooks').style.display = 'none';
     }
 }
