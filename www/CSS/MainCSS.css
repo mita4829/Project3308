@@ -40,7 +40,7 @@ p{
 }
 #footerBar{ /* Footer bar with other navaigation buttons */
     position: absolute;
-    bottom:0px;left:0px;right:0px;
+    bottom:0px;left:0px;right:0px;bottom:-10%;
     max-height:20%;
     height:10%;
     width:110%;
@@ -52,4 +52,10 @@ p{
 #notMobile{
     padding-top:40px;
     text-align:center;
+}
+#notLandscape{
+    display:none;
+}
+#continue{
+    display:none;
 }

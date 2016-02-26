@@ -28,14 +28,9 @@
                                     var z = Math.round(event.alpha);
                                     
                                     if(x >= 20){
-                                    document.getElementById('pano').style.top = -18*z+"px";
+                                    document.getElementById('pano').style.top = -15.4*z+"px";//All panos need a constant to prevent jumping effect when viewing panos.
                                     }else if(x <= -20){
-                                    document.getElementById('pano').style.top = -18*(z+180)+"px";
-                                    }else if(x < 20 && x > -20){
-                                        if(!batterySaver){
-                                        alert("Phone placed on table detected, app will now save battery life by turing off panoramic mode while on table.");
-                                        batterySaver = true;
-                                        }
+                                    document.getElementById('pano').style.top = -15.4*(z+180)+"px";
                                     }
                                     }, true);
                                     
@@ -45,7 +40,7 @@
         </script>
 <body onload="requestXYZ()">
 <p id='z'></p>
-    <img src="Panos/Archives.jpg" id="pano">
+    <img src="Panos/12.jpg" id="pano">
 </body>
 
 

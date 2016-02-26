@@ -27,5 +27,7 @@ function checkIfMobile(){
         document.getElementById('notMobile').style.display = 'none';
     }else{
         document.getElementById('userFormToSearchBooks').style.display = 'none';
+        document.getElementById('notLandscape').style.display = 'none';
+        document.getElementById('continue').style.display = 'none';
     }
 }
