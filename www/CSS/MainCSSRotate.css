@@ -7,7 +7,7 @@ p{
     color:grey;
     font-weight:lighter;
     font-family:Helvetica, Helvetica, Ariel;
-    font-size:20px;
+    font-size:24px;
 }
 
 #userFormToSearchBooks{ /* position of the form */
@@ -17,21 +17,20 @@ p{
     display:none;
 }
 #navigationBar{/* Header bar with all the UI buttons */
-    position: absolute;
+    position: fixed;
     top:0px;left:0px;right:0px;
-    max-height:20%;
-    height:15%;
+    height:50px;
     width:110%;
     background-color:rgba(242,242,242,1);
     outline-style: solid;
     outline-width: 1px;
     outline-color:rgba(178,178,178,1);
+    z-index:1;
 }
 #footerBar{ /* Footer bar with other navaigation buttons */
-    position: absolute;
-    bottom:0px;left:0px;right:0px;top:100%;
-    max-height:20%;
-    height:15%;
+    position: fixed;
+    bottom:0px;left:0px;right:0px;
+    height:50px;
     width:110%;
     background-color:rgba(242,242,242,1);
     outline-style: solid;
@@ -43,9 +42,11 @@ p{
     text-align:center;
 }
 #notLandscape{
-    position:absolute;
-    text-align:center;
-    top:25%;left:10%;right:0px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index:0;
 }
 
 #microLockAnimation{
@@ -84,9 +85,9 @@ p{
 #navigationBar p{
     position:absolute;
     color:rgb(0, 131, 254);
-    font-weight:300;
+    font-weight:400;
     font-size:2em;
-    top:-32;right:5%;
+    top:-25px;right:10%;
 }
 
 @-webkit-keyframes spin { 50%, 100% { -webkit-transform: rotate(360deg); } }
