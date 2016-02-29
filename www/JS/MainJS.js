@@ -31,3 +31,8 @@ function checkIfMobile(){
         document.getElementById('continue').style.display = 'none';
     }
 }
+
+function setCookies(){/*Function to save info into a cookie so transferring web pages preserves users' information  */
+    document.cookie = "UserName=Cookie Monster; expires=Tues, 1 Mar 2016 12:00:00 UTC; path=/";
+    alert(document.cookie);    
+}

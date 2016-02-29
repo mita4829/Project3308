@@ -1,0 +1,19 @@
+#leaf{
+    position:absolute;
+    left:0px;
+    top:0px;
+}
+#pano{
+    position:absolute;
+    z-index:-1;
+    top:0px;
+    left:0px;
+    
+    width:100%;
+}
+#notLandscape{
+    display:none;
+}
+#continue{
+    display:none;
+}
