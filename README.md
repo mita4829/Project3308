@@ -1,4 +1,4 @@
-# Norlin Book Lookup Mobile Application
+# Norlin Walk
 
 
 ## Project Description
