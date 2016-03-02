@@ -1,48 +1,245 @@
-/*
-This is a implementation of Dijkstra's algorithm in javascript
-This is so we can find the closest path between the user's current location and
-their final location
-*/
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * This is an implementation of Dijkstra's Algorithm in JavaScript.                                        *
+ * Lots of this is taken from https://github.com/mburst/dijkstras-algorithm/blob/master/dijkstras.js       *
+ * including the priority queue implementation.                                                            *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-// As an aside, I'm so sorry that the graph is stored as a global variable in this place
 
-// The graph setup. 
-var libGraph = {
-    // vertex "7a" is on the first floor, "7b" is on the second
-    // I changed the numbering because it was messed up anyways. Now 1->0 and so on until 7 and then it should be correct.
-    // The 7 on the second floor is mapped to 6 and the 7 on the first floor should be correct. 
-    // This gets extra confusing when you consider the second floor has the starting numbers
+// basic priority queue. only thing making it a priority queue is we can sort it after adding a node
+function PriorityQueue() {
+    this._nodes = [];
+
+    this.enqueue = function (priority, key) {
+        this._nodes.push({
+            key: key,
+            priority: priority
+        });
+        this.sort();
+    };
+    this.dequeue = function () {
+        return this._nodes.shift().key;
+    };
+    this.sort = function () {
+        this._nodes.sort(function (a, b) {
+            return a.priority - b.priority;
+        });
+    };
+    this.isEmpty = function () {
+        return !this._nodes.length;
+    };
+}
+
+// on a side note, I could have all the distances be hard coded to one, but I left room to grow. 
+// some of the nodes in our graph could be updated with longer distances than others if we choose
+// I also was having a hard time finding examples of the algoritm where distance wasn't part of it
+// javascript sucks
+function nSearch() {
+    // for readability
+    var INT_MAX = Number.MAX_SAFE_INTEGER;
+    // initial blank vertice array
+    this.vertices = {};
+
+    // for building the graph
+    // the graph is just an array of arrays. if this were c++ you could call them vectors, but its not...
+    this.addVertex = function (name, edges) {
+        this.vertices[name] = edges;
+    };
     
-    vertexes: ["0", "1", "2", "3", "4", "5", "6",
-               "7", "8", "9", "10", "11", "12",
-               "13", "14", "15", "16", "17", "18", "19",
-               "20", "21", "22", "23"],
-    
-    // please god help me and tell me I didn't mess this up
-    edges: [
-        [{to: 1}, {to: 2}],                             // 0
-        [{to: 0}, {to: 3}],                             // 1
-        [{to: 0}, {to: 4}, {to: 7}],                    // 2
-        [{to: 1}, {to: 4}, {to: 5}],                    // 3
-        [{to: 2}, {to: 3}, {to: 5}, {to: 6}],           // 4
-        [{to: 1}, {to: 3}, {to: 4}, {to: 6}],           // 5
-        [{to: 4}, {to: 5}, {to: 10}, {to: 18}],         // 6
-        [{to: 2}, {to: 8}, {to: 10}],                   // 7
-        [{to: 7}, {to: 9}],                             // 8
-        [{to: 8}],                                      // 9
-        [{to: 7}, {to: 11}],                            // 10
-        [{to: 10}, {to: 12}],                           // 11
-        [{to: 11}],                                     // 12 This is outside the library for reference
-        [{to: 2}, {to: 14}, {to: 16}],                  // 13
-        [{to: 1}, {to: 13}, {to: 15}],                  // 14
-        [{to: 14}, {to: 16}, {to: 19}, {to: 20}],       // 15
-        [{to: 17}, {to: 15}, {to: 18}],                 // 16
-        [{to: 16}],                                     // 17
-        [{to: 15}, {to: 16}, {to: 19}, {to: 6}],        // 18
-        [{to: 15}, {to: 18}, {to: 20}, {to: 22}],       // 19
-        [{to: 15}, {to: 19}, {to: 21}],                 // 20
-        [{to: 20}, {to: 22}, {to: 23}],                 // 21
-        [{to: 19}, {to: 21}, {to: 23}],                 // 22
-        [{to: 21}, {to: 22}]                            // 23
-    ]
-};
+    // start of pathfinding. This is dijkstra's algorithm
+    this.dijkstra = function (start, finish) {
+        // create a new empty priority queue for nodes to be added to.
+        // The current node gets added and then its neighbors are pushed in. The highest priority goes on top.
+        var nodes = new PriorityQueue(),
+            path = [],
+            previous = {},
+            distances = {},
+            smallest,
+            vertex, neighbor, alt;
+        
+        // adds all nodes from this into queue 
+        // when starting, the 'start' is the first priority with all others having INT_MAX priority
+        // probably could save some time by adding a flag to only sort when needed, but oh well. 
+        for (vertex in this.vertices) {
+            if (vertex === start) {
+                distances[vertex] = 0;
+                nodes.enqueue(0, vertex);
+            } else {
+                distances[vertex] = INT_MAX;
+                nodes.enqueue(INT_MAX, vertex);
+            }
+
+            previous[vertex] = null;
+        }
+        // finally the loop to go through remaning nodes.
+        while (!nodes.isEmpty()) {
+            // grab the first node in the queue
+            smallest = nodes.dequeue();
+            
+            // first check for finish case
+            if (smallest === finish) {
+                // push all of the previous nodes into the path. 
+                // as soon as we get back to the start break will terminate the function
+                // this does push the nodes in the reverse order, but that is something to figure out later
+                while (previous[smallest]) {
+                    path.push(smallest);
+                    smallest = previous[smallest];
+                }
+                break;
+            }
+            // checks to see if it should continue down this path. The INFNINTY checks there is a valid path to the next node
+            // since all new nodes are inserted with distance INT_MAX.
+            if (!smallest || distances[smallest] === INT_MAX) {
+                continue;
+            }
+            
+            // if we have gotten to this point, we need to start searching for neighbors
+            // enqueues the smallest neighbor. 
+            for (neighbor in this.vertices[smallest]) {
+
+                // needs to check if it should continue down this path, or go back up one.
+                // by adding the next distance with the current distance, it can compare with the
+                // other neighbors.
+                alt = distances[smallest] + this.vertices[smallest][neighbor];
+
+                if (alt < distances[neighbor]) {
+                    distances[neighbor] = alt;
+                    previous[neighbor] = smallest;
+                    
+                    // Now it enqueues smallests neighbor with priority alt
+                    // this is to ensure that it gets placed on top
+                    nodes.enqueue(alt, neighbor);
+                }
+            }
+        }
+        // this returns the path. Have to concat start to the array because it isn't added other wise. ALso reverse the whole thing
+        // because of the way the path was created by using previous.
+        return path.concat(start).reverse();
+    };
+}
+
+
+// the fun part. I know something is probably messed up here, but oh well
+var n = new nSearch();
+
+n.addVertex('1', {
+    2: 1,
+    3: 1
+});
+n.addVertex('2', {
+    1: 80,
+    4: 80
+});
+n.addVertex('3', {
+    1: 80,
+    5: 80,
+});
+n.addVertex('4', {
+    2: 80,
+    5: 80,
+    6: 80,
+    7: 90,
+});
+n.addVertex('5', {
+    3: 80,
+    4: 80,
+    6: 80,
+    7: 80
+});
+n.addVertex('6', {
+    4: 80,
+    5: 90,
+    7: 80
+});
+n.addVertex('7', {
+    4: 90,
+    5: 80,
+    6: 80,
+    10: 80,
+    18: 80
+});
+n.addVertex('8', {
+    9: 80,
+    27: 80
+});
+n.addVertex('9', {
+    8: 80
+});
+n.addVertex('10', {
+    7: 80,
+    11: 80,
+    27: 80
+});
+n.addVertex('11', {
+    10: 80,
+    12: 80
+});
+n.addVertex('12', {
+    11: 80
+});
+n.addVertex('13', {
+    14: 80,
+    16: 80
+});
+n.addVertex('14', {
+    13: 80,
+    15: 80
+});
+n.addVertex('15', {
+    14: 80,
+    16: 80
+});
+n.addVertex('16', {
+    13: 80,
+    15: 80,
+    17: 80,
+    18: 80
+});
+n.addVertex('17', {
+    16: 80
+});
+n.addVertex('18', {
+    7: 80,
+    15: 80,
+    16: 80,
+    20: 80
+});
+n.addVertex('19', {
+    27: 80
+});
+n.addVertex('20', {
+    15: 80,
+    18: 80,
+    21: 80
+});
+n.addVertex('21', {
+    20: 80,
+    22: 80,
+    23: 80
+});
+n.addVertex('22', {
+    21: 80,
+    23: 80
+});
+n.addVertex('23', {
+    21: 80,
+    22: 80,
+    24: 80
+});
+n.addVertex('24', {
+    23: 80,
+    25: 80
+});
+n.addVertex('25', {
+    24: 80,
+    26: 80
+});
+n.addVertex('26', {
+    25: 80
+});
+n.addVertex('27', {
+    8: 80,
+    10: 80,
+    19: 80
+});
+// test
+document.write(n.dijkstra('1', '23'));
