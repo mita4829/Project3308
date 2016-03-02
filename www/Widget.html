@@ -1,46 +1,45 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <style>
-            #leaf{
-                position:absolute;
-                left:0px;
-                top:0px;
-            }
-        #pano{
-            position:absolute;
-            z-index:-1;
-            top:0px;
-            left:0px;
-            
-            width:100%;
-        }
-            </style>
+        <link rel="stylesheet" type="text/css" href="CSS/Widget.css" media="screen and (orientation: landscape)">
+            <script src="JS/Widget.js"></script>
+        <link rel="stylesheet" type="text/css" href="CSS/WidgetRotate.css" media="screen and (orientation: portrait)">
+         <script src="JS/Widget.js"></script>
+
         </head>
-    <script>
-       
-        function requestXYZ(){
-            var batterySaver = false;
-            window.addEventListener("deviceorientation", function(event)
-                                    {
-                                    var x = Math.round(event.gamma);
-                                    var y = Math.round(event.beta);
-                                    var z = Math.round(event.alpha);
-                                    
-                                    if(x >= 20){
-                                    document.getElementById('pano').style.top = -15.4*z+"px";//All panos need a constant to prevent jumping effect when viewing panos.
-                                    }else if(x <= -20){
-                                    document.getElementById('pano').style.top = -15.4*(z+180)+"px";
-                                    }
-                                    }, true);
-                                    
-        }
+    
     
    
-        </script>
 <body onload="requestXYZ()">
-<p id='z'></p>
-    <img src="Panos/12.jpg" id="pano">
+    
+    <div id="navigationBar">
+        <!--Put navigation buttons here e.g. <back>-->
+        <a href="" ><p id="continue">continue ></p> </a>
+    </div>
+    
+   <div onclick="demo();">
+ <img src="Panos/12.jpg" id="pano">
+ </div>
+    
+    <div id="notLandscape">
+        
+    <p>1) Please put your phone in portrait lock.</p>
+    <div id="microLockAnimation">
+        <img src="UIImages/rotateTopLock.png" id="topLock">                                        <img src="UIImages/rotateBottomLock.png" id="bottomLock">
+        <img src="UIImages/rotateArrow.png" id="arrow">
+        <img src="UIImages/rotateBackground.png">
+    </div>
+        <br/><br/><br/></br>
+     
+        <p>2) Press continue.</p>
+    </div>
+    
+    
+    <div id="footerBar">
+        <p></p>
+        </div>
+
+
 </body>
 
 
