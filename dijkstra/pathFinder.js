@@ -1,9 +1,13 @@
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- * This is an implementation of Dijkstra's Algorithm in JavaScript.                                        *
- * Lots of this is taken from https://github.com/mburst/dijkstras-algorithm/blob/master/dijkstras.js       *
- * including the priority queue implementation.                                                            *
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-
+/********************************************************************************************************************
+ * This is an implementation of Dijkstra's Algorithm in JavaScript.                                                 *
+ * Lots of this is taken from https://github.com/mburst/dijkstras-algorithm/blob/master/dijkstras.js                *
+ * including the priority queue implementation.                                                                     *
+ *                                                                                                                  *
+ * As for functionality, this returns an array that contains the shortest path in order from start to finish        *
+ * If you need to modify its output at all, you can find the return statement below.                                *
+ * Currently I have it making the output nice and pretty, but if your needs are different feel free to change it    *
+ * n.dijkstra(start,finish) should return the array                                                                 *
+ ********************************************************************************************************************/
 
 // basic priority queue. only thing making it a priority queue is we can sort it after adding a node
 function PriorityQueue() {
@@ -121,6 +125,7 @@ function nSearch() {
 // the fun part. I know something is probably messed up here, but oh well
 var n = new nSearch();
 
+// this method of adding stuff in is messy but it will have todo for now
 n.addVertex('1', {
     2: 1,
     3: 1
@@ -241,5 +246,3 @@ n.addVertex('27', {
     10: 80,
     19: 80
 });
-// test
-document.write(n.dijkstra('1', '23'));
