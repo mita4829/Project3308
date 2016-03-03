@@ -13,12 +13,14 @@
 function PriorityQueue() {
     this._nodes = [];
 
-    this.enqueue = function (priority, key) {
+    this.enqueue = function (priority, key, doSort) {
         this._nodes.push({
             key: key,
             priority: priority
-        });
-        this.sort();
+        };
+        // small time improvement, only sort when needed
+	if (doSort)
+            this.sort();
     };
     this.dequeue = function () {
         return this._nodes.shift().key;
@@ -62,16 +64,15 @@ function nSearch() {
         
         // adds all nodes from this into queue 
         // when starting, the 'start' is the first priority with all others having INT_MAX priority
-        // probably could save some time by adding a flag to only sort when needed, but oh well. 
         for (vertex in this.vertices) {
             if (vertex === start) {
                 distances[vertex] = 0;
-                nodes.enqueue(0, vertex);
+                nodes.enqueue(0, vertex, false);
             } else {
                 distances[vertex] = INT_MAX;
-                nodes.enqueue(INT_MAX, vertex);
+                nodes.enqueue(INT_MAX, vertex, false);
             }
-
+            nodes.sort();
             previous[vertex] = null;
         }
         // finally the loop to go through remaning nodes.
@@ -111,7 +112,7 @@ function nSearch() {
                     
                     // Now it enqueues smallests neighbor with priority alt
                     // this is to ensure that it gets placed on top
-                    nodes.enqueue(alt, neighbor);
+                    nodes.enqueue(alt, neighbor, true);
                 }
             }
         }
@@ -246,3 +247,4 @@ n.addVertex('27', {
     10: 80,
     19: 80
 });
+document.write(n.dijkstra("1","24"));
