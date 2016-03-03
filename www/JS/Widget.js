@@ -1,20 +1,16 @@
-
 function requestXYZ(){
-
     window.addEventListener("deviceorientation", function(event)
-                            {
-                            var x = Math.round(event.gamma);
-                            var y = Math.round(event.beta);
-                            var z = Math.round(event.alpha);
-                            
-                            if(x >= 20){
-                            document.getElementById('pano').style.left = (10*z)-3600+"px";//All panos need a constant to prevent the jumping effect when viewing panos.
-                            batterySaver = false
-                            }else if(x <= -20){
-                            document.getElementById('pano').style.left = 10*(z+180)-7200+"px";
-                            batterySaver = false;
-                            }
-                            }, true);
+        {
+            var x = Math.round(event.gamma);
+            var y = Math.round(event.beta);
+            var z = Math.round(event.alpha);
+            if(x >= 20){
+                document.getElementById('pano').style.left = (10*z)-3600+"px";//All panos need a constant to prevent the jumping effect when viewing panos.
+            }else if(x <= -20){
+                document.getElementById('pano').style.left = 10*(z+180)-7200+"px";
+            
+            }
+        }, true);
     
 }
 //hmmm a global array for now...
