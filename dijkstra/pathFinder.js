@@ -247,4 +247,3 @@ n.addVertex('27', {
     10: 80,
     19: 80
 });
-document.write(n.dijkstra("1","24"));
