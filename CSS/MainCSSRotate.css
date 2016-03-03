@@ -1,0 +1,57 @@
+html, body{
+    background-color:white;
+    height: 100%;
+    width: 100%;
+}
+p{
+    color:grey;
+    font-weight:lighter;
+    font-family:Helvetica, Helvetica, Ariel;
+    font-size:20px;
+}
+
+#userFormToSearchBooks{ /* position of the form */
+    display:none;
+}
+#searchBar{ /* style for the search bar */
+    display:none;
+}
+#navigationBar{/* Header bar with all the UI buttons */
+    position: fixed;
+    top:0px;left:0px;right:0px;
+    height:50px;
+    width:110%;
+    background-color:rgba(242,242,242,1);
+    outline-style: solid;
+    outline-width: 1px;
+    outline-color:rgba(178,178,178,1);
+    z-index:1;
+}
+#footerBar{ /* Footer bar with other navaigation buttons */
+    position: fixed;
+    bottom:0px;left:0px;right:0px;
+    height:50px;
+    width:110%;
+    background-color:rgba(242,242,242,1);
+    outline-style: solid;
+    outline-width: 1px;
+    outline-color:rgba(178,178,178,1);
+}
+#notMobile{
+    padding-top:40px;
+    text-align:center;
+}
+#notLandscape{
+    position: absolute;
+    top:50%;left:50%;
+    width:100%;
+    transform: translate(-50%, -50%);
+    z-index:0;
+}
+#navigationBar p{
+    position:absolute;
+    color:rgb(0, 131, 254);
+    font-weight:400;
+    font-size:24px;
+    top:-25px;right:10%;
+}
