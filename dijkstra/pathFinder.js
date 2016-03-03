@@ -121,131 +121,130 @@ function nSearch() {
         return path.concat(start).reverse();
     };
 
-	// now hard coded in so it is easier to access the graph. If you want the graph in another arrangement,
-	// let me know or do it yourself :)
-	this.addVertex('1', {
-		2: 1,
-		3: 1
-	});
-	this.addVertex('2', {
-		1: 80,
-		4: 80
-	});
-	this.addVertex('3', {
-		1: 80,
-		5: 80,
-	});
-	this.addVertex('4', {
-		2: 80,
-		5: 80,
-		6: 80,
-		7: 90,
-	});
-	this.addVertex('5', {
-		3: 80,
-		4: 80,
-		6: 80,
-		7: 80
-	});
-	this.addVertex('6', {
-		4: 80,
-		5: 90,
-		7: 80
-	});
-	this.addVertex('7', {
-		4: 90,
-		5: 80,
-		6: 80,
-		10: 80,
-		18: 80
-	});
-	this.addVertex('8', {
-		9: 80,
-		27: 80
-	});
-	this.addVertex('9', {
-		8: 80
-	});
-	this.addVertex('10', {
-		7: 80,
-		11: 80,
-		27: 80
-	});
-	this.addVertex('11', {
-		10: 80,
-		12: 80
-	});
-	this.addVertex('12', {
-		11: 80
-	});
-	this.addVertex('13', {
-		14: 80,
-		16: 80
-	});
-	this.addVertex('14', {
-		13: 80,
-		15: 80
-	});
-	this.addVertex('15', {
-		14: 80,
-		16: 80
-	});
-	this.addVertex('16', {
-		13: 80,
-		15: 80,
-		17: 80,
-		18: 80
-	});
-	this.addVertex('17', {
-		16: 80
-	});
-	this.addVertex('18', {
-		7: 80,
-		15: 80,
-		16: 80,
-		20: 80
-	});
-	this.addVertex('19', {
-		27: 80
-	});
-	this.addVertex('20', {
-		15: 80,
-		18: 80,
-		21: 80
-	});
-	this.addVertex('21', {
-		20: 80,
-		22: 80,
-		23: 80
-	});
-	this.addVertex('22', {
-		21: 80,
-		23: 80
-	});
-	this.addVertex('23', {
-		21: 80,
-		22: 80,
-		24: 80
-	});
-	this.addVertex('24', {
-		23: 80,
-		25: 80
-	});
-	this.addVertex('25', {
-		24: 80,
-		26: 80
-	});
-	this.addVertex('26', {
-		25: 80
-	});
-	this.addVertex('27', {
-		8: 80,
-		10: 80,
-		19: 80
-	});
+    // now hard coded in so it is easier to access the graph. If you want the graph in another arrangement,
+    // let me know or do it yourself :)
+    this.addVertex('1', {
+	2: 1,
+	3: 1
+    });
+    this.addVertex('2', {
+	1: 1,
+	4: 1
+    });
+    this.addVertex('3', {
+	1: 1,
+	5: 1,
+    });
+    this.addVertex('4', {
+	2: 1,
+	5: 1,
+	6: 1,
+	7: 2,
+    });
+    this.addVertex('5', {
+	3: 1,
+	4: 1,
+	6: 1,
+	7: 1
+    });
+    this.addVertex('6', {
+	4: 1,
+	5: 2,
+	7: 1
+    });
+    this.addVertex('7', {
+	4: 2,
+	5: 1,
+	6: 1,
+	10: 1,
+	18: 1
+    });
+    this.addVertex('8', {
+	9: 1,
+	27: 1
+    });
+    this.addVertex('9', {
+	8: 1
+    });
+    this.addVertex('10', {
+	7: 1,
+	11: 1,
+	27: 1
+    });
+    this.addVertex('11', {
+	10: 1,
+	12: 1
+    });
+    this.addVertex('12', {
+	11: 1
+    });
+    this.addVertex('13', {
+	14: 1,
+	16: 1
+    });
+    this.addVertex('14', {
+	13: 1,
+	15: 1
+    });
+    this.addVertex('15', {
+	14: 1,
+	16: 1
+    });
+    this.addVertex('16', {
+	13: 1,
+	15: 1,
+	17: 1,
+	18: 1
+    });
+    this.addVertex('17', {
+	16: 1
+    });
+    this.addVertex('18', {
+	7: 1,
+	15: 1,
+	16: 1,
+	20: 1
+    });
+    this.addVertex('19', {
+	27: 1
+    });
+    this.addVertex('20', {
+	15: 1,
+	18: 1,
+	21: 1
+    });
+    this.addVertex('21', {
+	20: 1,
+	22: 1,
+	23: 1
+    });
+    this.addVertex('22', {
+	21: 1,
+	23: 1
+    });
+    this.addVertex('23', {
+        21: 1,
+        22: 1,
+        24: 1
+    });
+    this.addVertex('24', {
+        23: 1,
+        25: 1
+    });
+    this.addVertex('25', {
+        24: 1,
+        26: 1
+    });
+    this.addVertex('26', {
+        25: 1
+    });
+    this.addVertex('27', {
+        8: 1,
+        10: 1,
+        19: 1
+    });
 }
 
 
 // the fun part. I know something is probably messed up here, but oh well
 var n = new nSearch();
-document.write(n.dijkstra('3', '24'));
