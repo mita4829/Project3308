@@ -17,7 +17,7 @@ function PriorityQueue() {
         this._nodes.push({
             key: key,
             priority: priority
-        };
+        });
         // small time improvement, only sort when needed
 	if (doSort)
             this.sort();
@@ -72,9 +72,9 @@ function nSearch() {
                 distances[vertex] = INT_MAX;
                 nodes.enqueue(INT_MAX, vertex, false);
             }
-            nodes.sort();
             previous[vertex] = null;
         }
+        nodes.sort();
         // finally the loop to go through remaning nodes.
         while (!nodes.isEmpty()) {
             // grab the first node in the queue
