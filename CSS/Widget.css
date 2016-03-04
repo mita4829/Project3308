@@ -36,8 +36,9 @@ html, body{
 #pano{
     position:absolute;
     z-index:0;
-    top:0px;left:0px;
-    height:100%;
+    top:0px;
+    left:0px;
+    bottom: 0;
     
 
 }
