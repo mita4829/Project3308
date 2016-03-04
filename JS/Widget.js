@@ -18,6 +18,7 @@ var places = [12,11,10,7,5,3,1,0];
 var i = 0;
 function demo(){
     //tmp function
+    alert();
     if(places[i] != 0){
     document.getElementById('pano').src = "Panos/"+places[i]+".jpg";
     i++;
