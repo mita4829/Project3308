@@ -3,23 +3,24 @@
     <head>
         <link rel="stylesheet" type="text/css" href="CSS/Widget.css" media="screen and (orientation: landscape)">
             <script src="JS/Widget.js"></script>
-        <link rel="stylesheet" type="text/css" href="CSS/WidgetRotate.css" media="screen and (orientation: portrait)">
+        <link rel="stylesheet" type="text/css" href="CSS/WidgetPortrait.css" media="screen and (orientation: portrait)">
          <script src="JS/Widget.js"></script>
 
         </head>
     
     
    
-<body onload="requestXYZ()">
+<body onload="onload()">
     
     <div id="navigationBar">
         <!--Put navigation buttons here e.g. <back>-->
         <div id="container">
+            <p id="debugPos">Null</p>
         </div>
     </div>
     
-    <div onclick="demo();">
-       <img src="Panos/12.jpg" id="pano">
+    <div onclick="">
+       <img src="Panos/11.jpg" id="pano">
     </div>
     <div id="notLandscape">
         <p>Please turn your phone into landscape mode</p>
