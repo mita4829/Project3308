@@ -2,11 +2,17 @@
 <html>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	<head>
+        <title>NorlinWalk</title>
         <link rel="stylesheet" type="text/css" href="CSS/index.css" media="screen and (orientation: landscape)">
         <link rel="stylesheet" type="text/css" href="CSS/indexPortrait.css" media="screen and (orientation: portrait)">
         <script src="JS/MainJS.js"></script>
 	</head>	
 	<body onload="onload()">
+        <div id="container">
+            <img src="UIImages/Location-Services.png" id="locationServices" onclick="getGeoLocation()">
+            <p id="title">NorlinWalk</p>
+        </div>
+
         <div id="navigationBar">
             <!--Put navigation buttons here e.g. <back>-->
             <div id="container">
@@ -15,6 +21,9 @@
        
         
         <div id="userFormToSearchBooks">
+        <form id="userLocation"><!--form for searching books-->
+            <input type="text" id="locationBar" placeholder=" Starting location" onkeydown="if(event.keyCode == 13){searchForBnook(document.getElementById('searchBar').value);}"/><!--onkeydown part triggers button click when the user hits return-->
+        </form>
 		<form id="userInputForm"><!--form for searching books-->
 			<input type="text" id="searchBar" placeholder=" Search by title of book" onkeydown="if(event.keyCode == 13){searchForBnook(document.getElementById('searchBar').value);}"/><!-- onkeydown part triggers button click when the user hits return-->
         </form>
@@ -30,7 +39,7 @@
         
         <div id="notLandscape">
             
-            <p>Please turn your phone into landscape mode</p>
+            <p>Please turn your phone to landscape mode</p>
    
         </div>
         

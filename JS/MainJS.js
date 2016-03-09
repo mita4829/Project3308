@@ -1,7 +1,6 @@
 //Main javascript for home page
 function onload(){ //website calls this function when the website first loads up
     setDeviceUserAgent();
-
 }
 
 //firstEvents and secondEvents functions are here just to keep things organized. Use them if you like, or use it to call other functions you've made
@@ -15,6 +14,25 @@ function secondEvents(){
 
 function lastEvents(){
     
+}
+
+function getGeoLocation(){
+    if(navigator.geolocation){
+        //true if devices supports geoloc
+        navigator.geolocation.watchPosition(showPosition);
+
+    }else{
+        alert("It looks like your device does not support location services.");
+    }
+}
+
+function showPosition(position){
+    //function to get users' location lat long and alt and return it back as an array.
+    var latitude_longitude_altitude = [position.coords.latitude,position.coords.longitude,position.coords.altitude];
+    //...might have to hardcode the lat&long to map locations...
+    document.getElementById('locationBar').value = "Current Location";
+    document.getElementById('locationBar').style.color = "rgba(16,63,251,1)";
+    return;
 }
 
 function searchForBook(userInput){ /* userInput is the name of the book the user is searching for. */
@@ -39,6 +57,6 @@ function setDeviceUserAgent(){
     }else{
         document.getElementById('userFormToSearchBooks').style.display = 'none';
         document.getElementById('notLandscape').style.display = 'none';
-        document.getElementById('continue').style.display = 'none';
+        document.getElementById('locationServices').style.display = 'none';
     }
 }

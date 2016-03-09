@@ -41,10 +41,22 @@ p{
     padding-top:40px;
     text-align:center;
 }
+#title{
+    position:fixed;
+    color:black;
+    font-family:Helvetica Neue;
+    font-weight:500;
+    top:0%;left:50%;
+    transform: translate(-50%, -50%);
+    z-index:2;
+}
+#locationServices{
+    display:none;
+}
 #notLandscape{
     position: absolute;
-    top:50%;left:50%;
-    width:100%;
+    top:50%;left:60%;
+    width:80%;
     transform: translate(-50%, -50%);
     z-index:0;
 }

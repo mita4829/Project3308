@@ -12,10 +12,28 @@ p{
 #userFormToSearchBooks{ /* position of the form */
     margin: auto;
     position:absolute;
-    top:40%;left:5%;bottom:0;right:5%;
+    top:0%;left:5%;bottom:0;right:5%;
         z-index:1;
 }
+#locationBar{ /* style for the search bar */
+    position:absolute;
+    top:25%;
+    max-height:70px; min-height:70px;
+    width:100%;
+    border-radius: 5px;
+    background-color: rgba(235,235,235,0.9);
+    border-color: transparent;
+    outline-style: solid;
+    outline-width: 1px;
+    outline-color:rgba(178,178,178,1);
+    font-size: 24px;
+    color:black;
+    font-weight:300; /* thickness of font */
+    z-index:1;
+}
 #searchBar{ /* style for the search bar */
+    position:absolute;
+    top:50%;
     max-height:70px; min-height:70px;
     width:100%;
     border-radius: 5px;
@@ -51,6 +69,20 @@ p{
     outline-color:rgba(178,178,178,1);
     z-index:2;
 
+}
+#title{
+    position:fixed;
+    color:black;
+    font-family:Helvetica Neue;
+    font-weight:500;
+    top:1%;left:50%;
+    transform: translate(-50%, -50%);
+    z-index:3;
+}
+#locationServices{
+    position:fixed;
+    height:45px;left:2%;top:1%;
+    z-index:3;
 }
 
 #notMobile{
