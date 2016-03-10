@@ -6,17 +6,24 @@
         <link rel="stylesheet" type="text/css" href="CSS/WidgetPortrait.css" media="screen and (orientation: portrait)">
          <script src="JS/Widget.js"></script>
 
-        </head>
+    </head>
     
     
    
 <body onload="onload()">
     
+    <div id="container">
+        <form id="userLocation"><!--form for searching books-->
+            <input type="text" id="locationBar" placeholder=" Starting location" onkeydown="if(event.keyCode == 13){searchForBnook(document.getElementById('searchBar').value);}"/><!--onkeydown part triggers button click when the user hits return-->
+        </form>
+        <form id="userInputForm"><!--form for searching books-->
+            <input type="text" id="searchBar" placeholder=" Search by title of book" onkeydown="if(event.keyCode == 13){searchForBnook(document.getElementById('searchBar').value);}"/><!-- onkeydown part triggers button click when the user hits return-->
+        </form>
+        <img src="UIImages/Location-Services.png" id="locationServices" onclick="getGeoLocation()">
+            <!--<p id="debugPos">Null</p>-->
+    </div>
     <div id="navigationBar">
         <!--Put navigation buttons here e.g. <back>-->
-        <div id="container">
-            <p id="debugPos">Null</p>
-        </div>
     </div>
     
     <div onclick="">

@@ -49,48 +49,16 @@ p{
     z-index:0;
 }
 
-#microLockAnimation{
-    position: absolute;
-    top: 50%;
-    left: 50%;
+#title{
+    position:fixed;
+    color:black;
+    font-family:Helvetica Neue;
+    font-weight:500;
+    top:2%;left:50%;
     transform: translate(-50%, -50%);
+    z-index:2;
 }
-#microPhoneAnimation{
-    position: fixed;
-    top: 55%;
-    left: 43%;
-    transform: translate(-50%, -50%);
-}
-#topLock{
-    position:absolute;
-}
-#bottomLock{
-    position:absolute;
-}
-#arrow{
-    position: absolute;
-    -webkit-animation-duration: 1s;
-    -webkit-animation:spin 3s linear infinite;
-    -webkit-animation-delay: 0s;
-    transform-origin: 50% 50%;
-    
-}#phone{
-    position: absolute;
-    -webkit-animation-duration: 1s;
-    -webkit-animation:spin2 2s linear infinite;
-    -webkit-animation-delay: 0s;
-    
-    
-}
-#navigationBar p{
-    position:absolute;
-    color:rgb(0, 131, 254);
-    font-weight:400;
-    font-size:2em;
-    top:-25px;right:10%;
-}
+
 #pano{
     display:none;
 }
-@-webkit-keyframes spin { 50%, 100% { -webkit-transform: rotate(360deg); } }
-@-webkit-keyframes spin2 { 50%, 100% { -webkit-transform: rotate(90deg); } }
