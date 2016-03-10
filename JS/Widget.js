@@ -72,15 +72,19 @@ function setPanotoCurrentLocation(latitude,longitude,altitude){
         latitude = latitude.toString().substring(6,10);
         longitude = longitude.toString().substring(8,12);
         //altitude = altitude.toString();
-        alert(latitude+" "+longitude);
+        
         //10
-        if(latitude <= 8595 && latitude >= 8590 && longitude <= 5243 && longitude >= 5238){
+        if(latitude <= 6607 && latitude >= 6597 && longitude <= 4637 && longitude >= 4627){
             document.getElementById('pano').src = "Panos/10.jpg";
+            return;
         }//6
         else if(latitude <= 8510 && latitude >= 8504 && longitude <= 5284 && longitude >= 5278){
             document.getElementById('pano').src = "Panos/19.jpg";
+            return;
         }
+        alert(latitude+" "+longitude);
     }else{
-        alert("Location services cannot work if you're not inside Norlin while using.")
+        alert("Location services cannot work if you're not inside Norlin while using.");
+        return;
     }
 }
