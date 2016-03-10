@@ -82,7 +82,7 @@ function setPanotoCurrentLocation(latitude,longitude,altitude){
             document.getElementById('pano').src = "Panos/19.jpg";
             return;
         }
-        alert(latitude+" "+longitude);
+        //alert(latitude+" "+longitude);
     }else{
         alert("Location services cannot work if you're not inside Norlin while using.");
         return;
