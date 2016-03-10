@@ -45,4 +45,42 @@ function requestXYZ(isiPhone){
         }, true);
     }
 }
+function getGeoLocation(){
+    if(navigator.geolocation){
+        //true if devices supports geoloc
+        navigator.geolocation.watchPosition(showPosition);
+        
+    }else{
+        alert("It looks like your device does not support location services.");
+    }
+}
 
+function showPosition(position){
+    //function to get users' location lat long and alt and return it back as an array.
+    var latitude_longitude_altitude = [position.coords.latitude,position.coords.longitude,position.coords.altitude];
+    //...might have to hardcode the lat&long to map locations...
+    document.getElementById('locationBar').value = "Current Location";
+    document.getElementById('locationBar').style.color = "rgba(16,63,251,1)";
+    
+    setPanotoCurrentLocation(latitude_longitude_altitude[0],latitude_longitude_altitude[1],latitude_longitude_altitude[2]);
+    return;
+}
+
+function setPanotoCurrentLocation(latitude,longitude,altitude){
+    var bitWiseLat = latitude | 0;var bitWiseLong = longitude | 0;
+    if(bitWiseLat == 40 && bitWiseLong == -105){
+        latitude = latitude.toString().substring(6,10);
+        longitude = longitude.toString().substring(8,12);
+        //altitude = altitude.toString();
+        alert(latitude+" "+longitude);
+        //10
+        if(latitude <= 8595 && latitude >= 8590 && longitude <= 5243 && longitude >= 5238){
+            document.getElementById('pano').src = "Panos/10.jpg";
+        }//6
+        else if(latitude <= 8510 && latitude >= 8504 && longitude <= 5284 && longitude >= 5278){
+            document.getElementById('pano').src = "Panos/19.jpg";
+        }
+    }else{
+        alert("Location services cannot work if you're not inside Norlin while using.")
+    }
+}
