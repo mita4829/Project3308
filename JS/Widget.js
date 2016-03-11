@@ -12,6 +12,10 @@ function checkIfiPhone(){
         return false;
     }
 }
+function checkIfMobile(){
+    var mobile = (/Android|webOS|iPhone|iPad|iPod|Windows Phone|Kindle|IEMobile/i.test(navigator.userAgent)); //return boolean: Check to see if it's a mobile device, if false, disable site.
+    return mobile;
+}
 function requestXYZ(isiPhone){
     //iPhone complete
     if(isiPhone){
@@ -86,5 +90,15 @@ function setPanotoCurrentLocation(latitude,longitude,altitude){
     }else{
         alert("Location services cannot work if you're not inside Norlin while using.");
         return;
+    }
+}
+function setDeviceUserAgent(){
+    var mobile = checkIfMobile();
+    if(mobile){
+        document.getElementById('notMobile').style.display = 'none';
+    }else{
+        document.getElementById('userFormToSearchBooks').style.display = 'none';
+        document.getElementById('notLandscape').style.display = 'none';
+        document.getElementById('locationServices').style.display = 'none';
     }
 }
