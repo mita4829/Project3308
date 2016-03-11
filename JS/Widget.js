@@ -59,8 +59,6 @@ function showPosition(position){
     //function to get users' location lat long and alt and return it back as an array.
     var latitude_longitude_altitude = [position.coords.latitude,position.coords.longitude,position.coords.altitude];
     //...might have to hardcode the lat&long to map locations...
-    document.getElementById('locationBar').value = "Current Location";
-    document.getElementById('locationBar').style.color = "rgba(16,63,251,1)";
     
     setPanotoCurrentLocation(latitude_longitude_altitude[0],latitude_longitude_altitude[1],latitude_longitude_altitude[2]);
     return;
@@ -69,12 +67,12 @@ function showPosition(position){
 function setPanotoCurrentLocation(latitude,longitude,altitude){
     var bitWiseLat = latitude | 0;var bitWiseLong = longitude | 0;
     if(bitWiseLat == 40 && bitWiseLong == -105){
-        latitude = latitude.toString().substring(6,10);
-        longitude = longitude.toString().substring(8,12);
+        latitude = latitude.toString();
+        longitude = longitude.toString();
         //altitude = altitude.toString();
         
         //10
-        if(latitude <= 2868 && latitude >= 2860 && longitude <= 2980 && longitude >= 2975){
+        if(latitude <= 40.008694 && latitude >= 40.00851161 && longitude <= -105.2701053 && longitude >= -105.20719412){
             document.getElementById('pano').src = "Panos/10.jpg";
             return;
         }//6
@@ -83,6 +81,8 @@ function setPanotoCurrentLocation(latitude,longitude,altitude){
             return;
         }
         //alert(latitude+" "+longitude);
+        document.getElementById('locationBar').value = "Current Location";
+        document.getElementById('locationBar').style.color = "rgba(16,63,251,1)";
     }else{
         alert("Location services cannot work if you're not inside Norlin while using.");
         return;
