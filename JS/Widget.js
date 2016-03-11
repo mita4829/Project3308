@@ -72,7 +72,7 @@ function setPanotoCurrentLocation(latitude,longitude,altitude){
         //altitude = altitude.toString();
         
         //10
-        if(latitude <= 40.008694 && latitude >= 40.00851161 && longitude <= -105.2701053 && longitude >= -105.20719412){
+        if(latitude <= 40.008994 && latitude >= 40.00841161 && longitude <= -105.2701053 && longitude >= -105.27079412){
             document.getElementById('pano').src = "Panos/10.jpg";
             return;
         }//6
