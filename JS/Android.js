@@ -1,11 +1,6 @@
 function onload(){
     var isiPhone = checkIfiPhone();
-    requestXYZ(isiPhone);//turn on pano if not android
-    
-    var bookData = getQuery();//check if php call to database gave back data
-    if(!bookData){//if bookData is not null and has data from the database, parse it
-        
-    }
+    requestXYZ(isiPhone);
 }
 //Android phones' gyroscope behaves poorly as opposed to iPhones
 function checkIfiPhone(){
@@ -36,28 +31,20 @@ function requestXYZ(isiPhone){
                 document.getElementById('pano').style.left = 7*(z+180)-3600+"px";
             }
         }, true);
-    }
-}
 
-function getQuery(){
-    try{
-        return phpBookData;
-    }catch(err){
-        return null;
-        console.log("First Visit to site");
+    }else{//TODO: fix android bug where panos flip 180 deg
+    window.addEventListener("deviceorientation", function(event)
+        {
+            var x = Math.round(event.gamma);
+            var y = Math.round(event.beta);
+            var z = Math.round(event.alpha);
+            if(1){
+                document.getElementById('pano').style.left = (10*z)-3060+"px";//All panos need a constant to prevent the jumping effect when viewing panos.
+                document.getElementById('debugPos').innerHTML = document.getElementById('pano').style.left+" "+x+" "+y+" "+z;
+            }
+        }, true);
     }
 }
-
-function searchForBook(location,title){
-    var startingLocation = location;
-    var bookTitle = title;
-    if(startingLocation == ""){//if values are missing
-        alert("Starting location not given.");
-    }else if(bookTitle == ""){
-        alert("No book title given.");
-    }
-}
-/*
 function getGeoLocation(){
     if(navigator.geolocation){
         //true if devices supports geoloc
@@ -110,4 +97,4 @@ function setDeviceUserAgent(){
         document.getElementById('notLandscape').style.display = 'none';
         document.getElementById('locationServices').style.display = 'none';
     }
-}*/
+}
