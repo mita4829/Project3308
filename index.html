@@ -1,6 +1,6 @@
 <!--Main index page of website-->
 <html>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    
 	<head>
         <title>NorlinWalk</title>
         <link rel="stylesheet" type="text/css" href="CSS/index.css" media="screen and (orientation: landscape)">
@@ -10,24 +10,32 @@
 	<body onload="onload()">
         <div id="container">
             <img src="UIImages/Location-Services.png" id="locationServices" onclick="getGeoLocation()">
-            <p id="title">NorlinWalk</p>
+            
+        </div>
+        
+        <div id="container">
+            <div id="userFormToSearchBooks">
+                <form id="userBookTitle"><!--form for searching books-->
+                    <input type="text" id="searchBar" placeholder=" Search by title of book"/><!-- onkeydown part triggers button click when the user hits return-->
+                </form>
+                <form id="userLocation"><!--form for searching books-->
+                    <input type="text" id="locationBar" placeholder=" Starting location"/><!--onkeydown part triggers button click when the user hits return-->
+                </form>
+               
+                <img src="UIImages/Location-Services.png" id="locationServices" onclick="getGeoLocation()">
+                   <!-- <p id="debugPos">Null</p>-->
+                    <button id="searchButton" onclick="searchForBook(document.getElementById('locationBar').value,document.getElementById('searchBar').value)">Search</button>
+                    
+                    </div>
+            
         </div>
 
         <div id="navigationBar">
             <!--Put navigation buttons here e.g. <back>-->
-            <div id="container">
-            </div>
+     
         </div>
        
         
-        <div id="userFormToSearchBooks">
-        <form id="userLocation"><!--form for searching books-->
-            <input type="text" id="locationBar" placeholder=" Starting location" onkeydown="if(event.keyCode == 13){searchForBnook(document.getElementById('searchBar').value);}"/><!--onkeydown part triggers button click when the user hits return-->
-        </form>
-		<form id="userInputForm"><!--form for searching books-->
-			<input type="text" id="searchBar" placeholder=" Search by title of book" onkeydown="if(event.keyCode == 13){searchForBnook(document.getElementById('searchBar').value);}"/><!-- onkeydown part triggers button click when the user hits return-->
-        </form>
-        </div>
         
       
 
@@ -36,6 +44,15 @@
             <p>Come back on your mobile device to view this site.</p>
         </div>
         
+        
+        <div class="field">
+            <img src="Panos/homeBlur.jpg" id="blur">
+        </div>
+        
+      
+        
+        
+        <img src="Panos/home.jpg" id="pano">
         
         <div id="notLandscape">
             

@@ -1,89 +1,118 @@
-html, body{
-    background-color:white;
-    height: 100%;
-    width: 100%;
+body{
+    background-color:rgba(40,43,53,1);
+    margin: 0px;
+    padding: 0px;
 }
-p{
-    color:grey;
-    font-weight:lighter;
-    font-family:Helvetica;
-    font-size:24px;
-}
+
 #userFormToSearchBooks{ /* position of the form */
-    margin: auto;
-    position:absolute;
-    top:0%;left:5%;bottom:0;right:5%;
-        z-index:1;
+  
+  position:fixed;
+  height:15%;width:100%;
+  top:0;left:0;
+  z-index:3;
 }
 #locationBar{ /* style for the search bar */
-    position:absolute;
-    top:25%;
-    max-height:70px; min-height:70px;
-    width:100%;
+    position:fixed;
+    top:35%;left:50%;
+    height:15%;
+    max-height:20%;min-height:10%;
+    width:40%;
     border-radius: 5px;
-    background-color: rgba(235,235,235,0.9);
+    background-color: rgba(90,90,90,0.5);
     border-color: transparent;
     outline-style: solid;
     outline-width: 1px;
     outline-color:rgba(178,178,178,1);
-    font-size: 24px;
-    color:black;
+    font-size: 16px;
+    color:white;
     font-weight:300; /* thickness of font */
     z-index:1;
+}
+#searchButton{
+    position:fixed;
+    height:15%;
+    max-height:20%;min-height:10%;
+    width:80%;
+    top:51%;left:10%;
+    background-color: rgba(35,35,35,0.5);
+    border-color:transparent;
+    color:white;
+    outline-color:rgba(178,178,178,1);
+    font-size:16px;
+    
 }
 #searchBar{ /* style for the search bar */
-    position:absolute;
-    top:50%;
-    max-height:70px; min-height:70px;
-    width:100%;
+    position:fixed;
+    top:35%;left:10%;
+    height:15%;
+    max-height:20%;min-height:10%;
+    width:39.5%;
     border-radius: 5px;
-    background-color: rgba(235,235,235,0.9);
+    background-color: rgba(90,90,90,0.5);
     border-color: transparent;
     outline-style: solid;
     outline-width: 1px;
     outline-color:rgba(178,178,178,1);
-    font-size: 24px;
-    color:black;
+    font-size: 16px;
+    color:white;
     font-weight:300; /* thickness of font */
     z-index:1;
 }
-#navigationBar{/* Header bar with all the UI buttons */
-    position: fixed;
-    top:0px;left:0px;right:0px;
-    height:60px;
-    width:110%;
-    background-color:rgba(242,242,242,0.9);
+#navigationBar{
+    position:fixed;
+    top:0px;left:0px;
+    width:100%;
+    height:15%;
+    background-color:rgba(43,46,56,1);
+    box-shadow:2px 0px 10px;
     outline-style: solid;
     outline-width: 1px;
     outline-color:rgba(178,178,178,1);
     z-index:2;
 }
-#footerBar{ /* Footer bar with other navaigation buttons */
-    position: fixed;
-    bottom:0px;left:0px;right:0px;
-    height:60px;
-    width:110%;
-    background-color:rgba(242,242,242,0.9);
+#footerBar{
+    position:fixed;
+    left:0px;bottom:0px;
+    width:100%;
+    height:15%;
+    background-color:rgba(43,46,56,1);
+    box-shadow:-2px 0px 10px;
     outline-style: solid;
     outline-width: 1px;
-    outline-color:rgba(178,178,178,1);
+    outline-color:rgba(82,84,91,1);
     z-index:2;
+}
 
+#pano{
+    position:absolute;
+    z-index:0;
+    height:75%;
+    top:10%;left:0px;bottom:15%;
 }
-#title{
+/* for yee who copies this blurring effect css code is a fool...*/
+.field{
+    overflow:hidden;
     position:fixed;
-    color:black;
-    font-family:Helvetica Neue;
-    font-weight:500;
-    top:1%;left:50%;
-    transform: translate(-50%, -50%);
-    z-index:3;
+    z-index:1;
+    
+    top:35%;left:10%;
+    width:80%;height:31%;
 }
+#blur{
+    position:fixed;
+    z-index:0;
+    height:85%;
+    top:10%;left:10%;bottom:15%;
+    
+}
+
+
 #locationServices{
-    position:fixed;
+    position:absolute;
     height:45px;left:2%;top:1%;
     z-index:3;
 }
+
 
 #notMobile{
     padding-top:40px;

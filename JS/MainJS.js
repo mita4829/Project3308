@@ -1,6 +1,9 @@
 //Main javascript for home page
 function onload(){ //website calls this function when the website first loads up
+    var isiPhone = checkIfiPhone();
     setDeviceUserAgent();
+    requestXYZ(isiPhone);//turn on pano if not android
+    
 }
 
 //firstEvents and secondEvents functions are here just to keep things organized. Use them if you like, or use it to call other functions you've made
@@ -35,13 +38,42 @@ function showPosition(position){
     return;
 }
 
-function searchForBook(userInput){ /* userInput is the name of the book the user is searching for. */
-    /* Add more code here to connect with the SQL server to get the location of the book */
-    alert(userInput);
+function searchForBook(location,title){
+    var startingLocation = location;//work here giving better start locations
+    var bookTitle = title;
+    if(startingLocation == ""){//if values are missing
+        alert("Starting location not given.");
+        return;
+    }else if(bookTitle == ""){
+        alert("No book title given.");
+        return;
+    }
+    //might need to sanitize input
+    window.location.href = "append.php?w1=" + bookTitle + "&w2=" + startingLocation;//query the database with
+    
+}
+
+function requestXYZ(isiPhone){
+    //iPhone complete
+    if(isiPhone){
+        window.addEventListener("deviceorientation", function(event){
+            var x = Math.round(event.gamma);
+            var y = Math.round(event.beta);
+            var z = Math.round(event.alpha);
+            if(x >= 20){
+                document.getElementById('pano').style.left = (7.5*z)-3600+"px";
+                document.getElementById('blur').style.left = (7.5*z)-3600+"px";//All panos need a constant to prevent the jumping effect when viewing
+                                document.getElementById('debugPos').innerHTML = z;
+            }else if(x <= -20){
+                document.getElementById('pano').style.left = 7.5*(z+180)-3600+"px";
+                document.getElementById('blur').style.left = 7.5*(z+180)-3600+"px";
+            }
+        }, true);
+    }
 }
 
 function checkIfMobile(){
-    var mobile = (/Android|webOS|iPhone|iPad|iPod|Windows Phone|Kindle|IEMobile/i.test(navigator.userAgent)); //return boolean: Check to see if it's a mobile device, if false, disable site.
+    var mobile = (/Mac|Android|webOS|iPhone|iPad|iPod|Windows Phone|Kindle|IEMobile/i.test(navigator.userAgent)); //return boolean: Check to see if it's a mobile device, if false, disable site.
     return mobile;
 }
 
@@ -58,5 +90,18 @@ function setDeviceUserAgent(){
         document.getElementById('userFormToSearchBooks').style.display = 'none';
         document.getElementById('notLandscape').style.display = 'none';
         document.getElementById('locationServices').style.display = 'none';
+        document.getElementById('pano').style.display = 'none';
+        document.getElementById('userFormToSearchBooks').style.display = 'none';
+    }
+}
+
+function checkIfiPhone(){
+    var android = (/Android/i.test(navigator.userAgent));
+    if(!android){
+        //assuming most people have iPhones or other phones but android
+        
+        return true;
+    }else{
+        return false;
     }
 }
