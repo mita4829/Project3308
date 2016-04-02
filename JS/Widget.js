@@ -2,11 +2,12 @@ function onload(){
     var isiPhone = checkIfiPhone();
     requestXYZ(isiPhone);//turn on pano if not android
     
-    var bookData = getQuery();//check if php call to database gave back data
-    if(!bookData){//if bookData is not null and has data from the database, parse it
-        
-    }
+    var data = checkPHPCall();//find out if database gave back values
+    beginDataParse(data);
 }
+
+
+
 //Android phones' gyroscope behaves poorly as opposed to iPhones
 function checkIfiPhone(){
     var android = (/Android/i.test(navigator.userAgent));
@@ -17,10 +18,14 @@ function checkIfiPhone(){
         return false;
     }
 }
+
+
 function checkIfMobile(){
     var mobile = (/Android|webOS|iPhone|iPad|iPod|Windows Phone|Kindle|IEMobile/i.test(navigator.userAgent)); //return boolean: Check to see if it's a mobile device, if false, disable site.
     return mobile;
 }
+
+
 function requestXYZ(isiPhone){
     //iPhone complete
     if(isiPhone){
@@ -39,26 +44,50 @@ function requestXYZ(isiPhone){
     }
 }
 
-function getQuery(){
+function checkPHPCall(){
     try{
-        return phpBookData;
+        endlocation;
+        start;
+        return true;
     }catch(err){
-        return null;
-        console.log("First Visit to site");
+        return false;//endlocation does not exist which means first visit to site or book not found in db
     }
 }
 
 function searchForBook(location,title){
-    var startingLocation = location;
+    var startingLocation = location;//work here giving better start locations
     var bookTitle = title;
     if(startingLocation == ""){//if values are missing
         alert("Starting location not given.");
+        return;
     }else if(bookTitle == ""){
         alert("No book title given.");
+        return;
+    }
+    //might need to sanitize input
+    window.location.href = "append.php?w1=" + bookTitle + "&w2=" + startingLocation;//query the database with
+    
+}
+
+function beginDataParse(data){
+    if(data){
+        path = n.dijkstra(start.toString(),endlocation.toString());
+	document.getElementById('pano').src = "Panos/"+path[0]+".jpg";
     }
 }
-/*
+
+function getNextImage(){
+    if(inc < path.length){
+        document.getElementById('pano').src = "Panos/"+path[inc]+".jpg";
+        inc = inc + 1;
+    }else{
+        alert("You have arrived!");
+    }
+}
+
+
 function getGeoLocation(){
+    alert("Norlin Walk would like to use your current location as your starting location. This will only work if you're inside Norlin while using the app.");
     if(navigator.geolocation){
         //true if devices supports geoloc
         navigator.geolocation.watchPosition(showPosition);
@@ -68,39 +97,29 @@ function getGeoLocation(){
     }
 }
 
+
 function showPosition(position){
     //function to get users' location lat long and alt and return it back as an array.
-    var latitude_longitude_altitude = [position.coords.latitude,position.coords.longitude,position.coords.altitude];
-    //...might have to hardcode the lat&long to map locations...
+    var latitude_longitude = [position.coords.latitude,position.coords.longitude];
     
-    setPanotoCurrentLocation(latitude_longitude_altitude[0],latitude_longitude_altitude[1],latitude_longitude_altitude[2]);
+setPanotoCurrentLocation(latitude_longitude[0],latitude_longitude[1]);
     return;
 }
 
-function setPanotoCurrentLocation(latitude,longitude,altitude){
+function setPanotoCurrentLocation(latitude,longitude){
     var bitWiseLat = latitude | 0;var bitWiseLong = longitude | 0;
     if(bitWiseLat == 40 && bitWiseLong == -105){
         latitude = latitude.toString();
         longitude = longitude.toString();
-        //altitude = altitude.toString();
         
-        //10
-        if(latitude <= 40.008994 && latitude >= 40.00841161 && longitude <= -105.2701053 && longitude >= -105.27079412){
-            document.getElementById('pano').src = "Panos/10.jpg";
-            return;
-        }//6
-        else if(latitude <= 8510 && latitude >= 8504 && longitude <= 5284 && longitude >= 5278){
-            document.getElementById('pano').src = "Panos/19.jpg";
-            return;
-        }
-        //alert(latitude+" "+longitude);
+        
         document.getElementById('locationBar').value = "Current Location";
-        document.getElementById('locationBar').style.color = "rgba(16,63,251,1)";
+        document.getElementById('locationBar').style.color = "rgba(16,163,271,1)";
     }else{
-        alert("Location services cannot work if you're not inside Norlin while using.");
         return;
     }
 }
+
 function setDeviceUserAgent(){
     var mobile = checkIfMobile();
     if(mobile){
@@ -110,4 +129,4 @@ function setDeviceUserAgent(){
         document.getElementById('notLandscape').style.display = 'none';
         document.getElementById('locationServices').style.display = 'none';
     }
-}*/
+}
