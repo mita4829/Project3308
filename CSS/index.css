@@ -11,24 +11,7 @@ body{
   top:0;left:0;
   z-index:3;
 }
-#locationBar{ /* style for the search bar */
-    position:fixed;
-    top:35%;left:50%;
-    height:15%;
-    max-height:20%;min-height:10%;max-width:39.5%;
-    width:40%;
-    border-radius: 5px;
-    background-color: rgba(35,35,35,0.5);
-    -webkit-backdrop-filter: blur(10px);
-    border-color: transparent;
-    outline-style: solid;
-    outline-width: 1px;
-    outline-color:rgba(178,178,178,1);
-    font-size: 16px;
-    color:white;
-    font-weight:300; /* thickness of font */
-    z-index:1;
-}
+
 #searchButton{
     position:fixed;
     height:15%;
@@ -87,7 +70,26 @@ body{
     outline-color:rgba(82,84,91,1);
     z-index:2;
 }
-
+#locationBar{
+     /* style for the search bar */
+        position:fixed;
+        top:35%;left:50%;
+        height:15%;
+        max-height:20%;min-height:10%;max-width:39.5%;
+        width:40%;
+        border-radius: 5px;
+        background-color: rgba(35,35,35,0.5);
+        -webkit-backdrop-filter: blur(10px);
+        border-color: transparent;
+        outline-style: solid;
+        -webkit-appearance:none;
+        outline-width: 1px;
+        outline-color:rgba(178,178,178,1);
+        font-size: 16px;
+        color:white;
+        font-weight:300; /* thickness of font */
+        z-index:1;
+}
 #pano{
     position:absolute;
     z-index:0;

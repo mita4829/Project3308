@@ -16,8 +16,15 @@
                 <form id="userBookTitle"><!--form for searching books-->
                     <input type="text" id="searchBar" placeholder=" Search by title of book"/><!-- onkeydown part triggers button click when the user hits return-->
                 </form>
-                <form id="userLocation"><!--form for searching books-->
-                    <input type="text" id="locationBar" placeholder=" Starting location"/><!--onkeydown part triggers button click when the user hits return-->
+                
+                <select id="locationBar">
+                    <option value="1">West Entrance</option>
+                    <option value="12">East Entrence</option>
+                    <option value="Current Location">Current Location</option>
+                </select>
+                
+                <!-- <form id="userLocation"><!--form for searching books-->
+                  <!--  <input type="text" id="locationBar" placeholder=" Starting location"/><!--onkeydown part triggers button click when the user hits return-->
                 </form>
                
                 <img src="UIImages/Location-Services.png" id="locationServices" onclick="getGeoLocation()">
@@ -37,11 +44,11 @@
         
       
 
-        <div id="notMobile">
+       <!-- <div id="notMobile">
             <img src="UIImages/NotMobile.jpg">
             <p>Come back on your mobile device to view this site.</p>
-        </div>
-        
+        </div>-->
+       
         
         <div class="field">
             <!--for yee who is reading this, I know that this a stupid way to dynamically blur the background...-->

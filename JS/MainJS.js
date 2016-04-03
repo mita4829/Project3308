@@ -1,7 +1,7 @@
 //Main javascript for home page
 function onload(){ //website calls this function when the website first loads up
-    var isiPhone = checkIfiPhone();
     setDeviceUserAgent();
+    var isiPhone = checkIfiPhone();
     requestXYZ(isiPhone);//turn on pano if not android
     
 }
@@ -33,8 +33,9 @@ function showPosition(position){
     //function to get users' location lat long and alt and return it back as an array.
     var latitude_longitude_altitude = [position.coords.latitude,position.coords.longitude,position.coords.altitude];
     //...might have to hardcode the lat&long to map locations...
-    document.getElementById('locationBar').value = "Current Location";
-    document.getElementById('locationBar').style.color = "rgba(26,73,255,1)";
+    //Work here
+    document.getElementById("locationBar").value = "Current Location";
+    document.getElementsByTagName("locationBar").style.color = "rgba(26,73,255,1)";
     return;
 }
 
@@ -73,7 +74,7 @@ function requestXYZ(isiPhone){
 }
 
 function checkIfMobile(){
-    var mobile = (/Mac|Android|webOS|iPhone|iPad|iPod|Windows Phone|Kindle|IEMobile/i.test(navigator.userAgent)); //return boolean: Check to see if it's a mobile device, if false, disable site.
+    var mobile = (/Mac|Windows|Linux|Android|webOS|iPhone|iPad|iPod|Windows Phone|Kindle|IEMobile/i.test(navigator.userAgent)); //return boolean: Check to see if it's a mobile device, if false, disable site.
     return mobile;
 }
 
@@ -91,7 +92,6 @@ function setDeviceUserAgent(){
         document.getElementById('notLandscape').style.display = 'none';
         document.getElementById('locationServices').style.display = 'none';
         document.getElementById('pano').style.display = 'none';
-        document.getElementById('blur').style.display = 'none';
         document.getElementById('userFormToSearchBooks').style.display = 'none';
     }
 }
