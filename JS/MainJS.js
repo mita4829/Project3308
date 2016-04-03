@@ -34,7 +34,7 @@ function showPosition(position){
     var latitude_longitude_altitude = [position.coords.latitude,position.coords.longitude,position.coords.altitude];
     //...might have to hardcode the lat&long to map locations...
     document.getElementById('locationBar').value = "Current Location";
-    document.getElementById('locationBar').style.color = "rgba(16,63,251,1)";
+    document.getElementById('locationBar').style.color = "rgba(26,73,255,1)";
     return;
 }
 
@@ -91,6 +91,7 @@ function setDeviceUserAgent(){
         document.getElementById('notLandscape').style.display = 'none';
         document.getElementById('locationServices').style.display = 'none';
         document.getElementById('pano').style.display = 'none';
+        document.getElementById('blur').style.display = 'none';
         document.getElementById('userFormToSearchBooks').style.display = 'none';
     }
 }
