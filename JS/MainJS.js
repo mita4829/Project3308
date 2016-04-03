@@ -41,7 +41,7 @@ function showPosition(position){
 
 function searchForBook(location,title){
     var startingLocation = location;//work here giving better start locations
-    var bookTitle = title;
+    var bookTitle = escape(title);
     if(startingLocation == ""){//if values are missing
         alert("Starting location not given.");
         return;
@@ -86,7 +86,7 @@ function setCookies(){/*Function to save info into a cookie so transferring web 
 function setDeviceUserAgent(){
     var mobile = checkIfMobile();
     if(mobile){
-        document.getElementById('notMobile').style.display = 'none';
+        //document.getElementById('notMobile').style.display = 'none';
     }else{
         document.getElementById('userFormToSearchBooks').style.display = 'none';
         document.getElementById('notLandscape').style.display = 'none';
@@ -105,4 +105,11 @@ function checkIfiPhone(){
     }else{
         return false;
     }
+}
+
+function escape(string){
+    //function to sanitize string removing all spaces and non-alpha/num char and lowercase all alpha
+    var str = string;
+    str = str.replace(/[\W_]+/g, '').toLowerCase();
+    return str;
 }
