@@ -9,39 +9,33 @@
         <script src="JS/MainJS.js"></script>
 	</head>	
 	<body onload="onload()">
-       
-
-        <div id="container">
-            <div id="userFormToSearchBooks">
-                <form id="userBookTitle"><!--form for searching books-->
-                    <input type="text" id="searchBar" placeholder=" Search by title of book"/><!-- onkeydown part triggers button click when the user hits return-->
-                </form>
-                
-                <select id="locationBar">
-                    <option value="1">West Entrance</option>
-                    <option value="12">East Entrence</option>
-                    <option value="Current Location">Current Location</option>
-                </select>
-                
-                <!-- <form id="userLocation"><!--form for searching books-->
-                  <!--  <input type="text" id="locationBar" placeholder=" Starting location"/><!--onkeydown part triggers button click when the user hits return-->
-                </form>
-               
-                <img src="UIImages/Location-Services.png" id="locationServices" onclick="getGeoLocation()">
-                   <!-- <p id="debugPos">Null</p>-->
-                    <button id="searchButton" onclick="searchForBook(document.getElementById('locationBar').value,document.getElementById('searchBar').value)">Search</button>
-                    
-                    </div>
-            
-        </div>
 
         <div id="navigationBar">
             <!--Put navigation buttons here e.g. <back>-->
-            
         </div>
        
-        
-        
+       
+        <div id="userFormToSearchBooks">
+            <form id="userBookTitle"><!--form for searching books-->
+                <input type="text" id="searchBar" placeholder=" Search by title of book"/><!-- onkeydown part triggers button click when the user hits return-->
+            </form>
+            
+            <select id="locationBar">
+                <option value="null">Starting Location</option>
+                <option value="1">West Entrance</option>
+                <option value="12">East Entrence</option>
+                <option value="Current Location">Current Location</option>
+            </select>
+            
+            <!-- <form id="userLocation"><!--form for searching books-->
+            <!--  <input type="text" id="locationBar" placeholder=" Starting location"/><!--onkeydown part triggers button click when the user hits return-->
+            </form>
+            
+            <img src="UIImages/Location-Services.png" id="locationServices" onclick="getGeoLocation()">
+                <!-- <p id="debugPos">Null</p>-->
+                <button id="searchButton" onclick="searchForBook(document.getElementById('locationBar').value,document.getElementById('searchBar').value)">Search</button>
+                
+        </div>
       
 
        <!-- <div id="notMobile">
@@ -49,15 +43,6 @@
             <p>Come back on your mobile device to view this site.</p>
         </div>-->
        
-        
-        <div class="field">
-            <!--for yee who is reading this, I know that this a stupid way to dynamically blur the background...-->
-            <!--<img src="Panos/homeBlur.jpg" id="blur">-->
-        </div>
-        
-      
-        
-        
         <img src="Panos/home.jpg" id="pano">
         
         <div id="notLandscape">

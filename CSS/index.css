@@ -7,37 +7,37 @@ body{
 #userFormToSearchBooks{ /* position of the form */
   
   position:fixed;
-  height:15%;width:100%;
+  height:100%;width:100%;
   top:0;left:0;
   z-index:3;
 }
 
 #searchButton{
-    position:fixed;
+    position:absolute;
     height:15%;
     max-height:20%;min-height:10%;
     width:80%;
-    top:51%;left:10%;
+    top:50%;left:10%;
     background-color: rgba(35,35,35,0.5);
     -webkit-backdrop-filter: blur(10px);
+    border-bottom-right-radius:20px;
+    border-bottom-left-radius:20px;
     border-color:transparent;
     color:white;
     outline-color:rgba(178,178,178,1);
     font-size:16px;
-    
+
 }
 #searchBar{ /* style for the search bar */
-    position:fixed;
+    position:absolute;
     top:35%;left:10%;
-    height:15%;
+    height:14.5%;
     max-height:20%;min-height:10%;max-width:39.5%;
     width:39.5%;
-    border-radius: 5px;
+    border-top-left-radius:20px;
     background-color: rgba(35,35,35,0.5);
     -webkit-backdrop-filter: blur(10px);
     border-color: transparent;
-    outline-style: solid;
-    outline-width: 1px;
     outline-color:rgba(178,178,178,1);
     font-size: 16px;
     color:white;
@@ -48,7 +48,7 @@ body{
     position:fixed;
     top:0px;left:0px;
     width:100%;
-    height:15%;
+    height:10%;
     background-color: rgba(35,35,35,0.8);
     -webkit-backdrop-filter: blur(10px);
     box-shadow:2px 0px 10px;
@@ -61,7 +61,7 @@ body{
     position:fixed;
     left:0px;bottom:-1px;
     width:100%;
-    height:15%;
+    height:10%;
     background-color: rgba(35,35,35,0.8);
     -webkit-backdrop-filter: blur(10px);
     box-shadow:-2px 0px 10px;
@@ -71,23 +71,20 @@ body{
     z-index:2;
 }
 #locationBar{
-     /* style for the search bar */
-        position:fixed;
+    
+        position:absolute;
         top:35%;left:50%;
-        height:15%;
-        max-height:20%;min-height:10%;max-width:39.5%;
+        height:14.5%;
+        max-height:20%;min-height:10%;max-width:40%;
         width:40%;
-        border-radius: 5px;
+        border-top-right-radius:20px;
         background-color: rgba(35,35,35,0.5);
         -webkit-backdrop-filter: blur(10px);
         border-color: transparent;
-        outline-style: solid;
         -webkit-appearance:none;
-        outline-width: 1px;
-        outline-color:rgba(178,178,178,1);
         font-size: 16px;
         color:white;
-        font-weight:300; /* thickness of font */
+        font-weight:300;
         z-index:1;
 }
 #pano{
