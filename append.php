@@ -2,6 +2,12 @@
     if(isset($_GET["w1"]) && isset($_GET["w2"])){
         $bookName = $_GET["w1"];
         $start = $_GET["w2"];
+        
+        //2nd layer escape
+        $bookName = strtolower(preg_replace("/[\W_]+/", "", $bookName));
+        $start = strtolower(preg_replace("/[\W_]+/", "", $start));
+
+
         $conn = pg_connect("host=ec2-54-225-112-119.compute-1.amazonaws.com port=5432 dbname=de18hj9tfanog1 user=kxizkxtdcxuzet password=FBoL33SMwtqUBKN1yC4bpzv4Ch");
         if(!conn){
             echo "Cannot connect to database";
