@@ -32,11 +32,11 @@ Norlin Walk
   </tr>
   <tr>
     <th>Pre-conditions:</th>
-    <td colspan=3>User has his/her machine ready, <a href="https://github.com/mita4829/Project3308/blob/master/index.html">downloaded the HTML file</a> and currently in the directory the file is located</td>
+    <td colspan=3>User has his/her machine and a browser ready</td>
   </tr>
   <tr>
     <th>Post-conditions:</th>
-    <td colspan=3>The initial web application page of the Norlin library gyroscope is shown</td>
+    <td colspan=3>The initial web application page of the Norlin library gyroscope and search book, set starting location and search barshown</td>
   </tr>
   <tr>
     <th rowspan=3>Event Flow:</th>
@@ -45,14 +45,13 @@ Norlin Walk
     <th>Comments</th>
   </tr>
   <tr>
-    <td>1. Set up the local web server that can serve a simple HTML file on one's machine and run the command "python -m SimpleHTTPServer 8000"</td>
-    <td>Verified that the server is working from the message "Serving HTTP on 0.0.0.0 port 8000 ..."</td>
+    <td>1. Enter the url "www.norlinwalk.herokuapp.com" in the browser</td>
+    <td>The first page of the web application is displayed</td>
     <td> </td>
   </tr>
   <tr>
-    <td>2. Open a web browser and open the file index.html by running "http://127.0.0.1:8000/index.html"</td>
-    <td>The web application is visible, showing the gyroscope outside of Norlin as the first page</td>
-    <td> </td>
+    <td>2. Tap on any of the bars</td>
+    <td>Able to enter in the book title, select starting location</td>
   </tr>
   <tr>
     <th>Test Result:</th>
@@ -60,7 +59,7 @@ Norlin Walk
   </tr>
   <tr>
     <th>Notes:</th>
-    <td colspan=3>If the server gives an error message, double check the directory where the server is being run</td>
+    <td colspan=3> </td>
   </tr>
 </table>
 
@@ -72,11 +71,11 @@ Norlin Walk
   </tr>
   <tr>
     <th>Pre-conditions:</th>
-    <td colspan=3>Through the local server, web application, Norlin Walk is visible</td>
+    <td colspan=3>The web application, Norlin Walk is visible</td>
   </tr>
   <tr>
     <th>Post-conditions:</th>
-    <td colspan=3>Simple activities could be done using the application</td>
+    <td colspan=3>Able to load the next gyroscope in the application when search valid book title</td>
   </tr>
   <tr>
     <th rowspan=4>Event Flow:</th>
@@ -85,18 +84,18 @@ Norlin Walk
     <th>Comments</th>
   </tr>
   <tr>
-    <td>1. Click on "Search by title of book"</td>
-    <td>Able to type in the book that is to be searched</td>
+    <td>1. Valid title of a book is entered in the "Search by title of book" bar</td>
+    <td>If the book exists in the application database, the web application loads the next page that show the arrows and the gyroscopes on the way to the destination</td>
     <td> </td>
   </tr>
   <tr>
-    <td>2. Click on "Starting Location"</td>
-    <td>Options pop up: "West Entrance", "East Entrance" and "Current Location"</td>
+    <td>2. Select "Starting Location" and choose one of the locations</td>
+    <td>Options pop up: "West Entrance", "East Entrance" and "Current Location. If clicked, starting location set"</td>
     <td> </td>
   </tr>
   <tr>
     <td>3. Click on "Search"</td>
-    <td>PHP file that can talk to the database of the application is downloaded. If clicked on before tying in the book title, message saying that "No book title given." pops up</td>
+    <td>Web Application loaded to the first path to the book. If clicked on before tying in the book title, message saying that "No book title given." pops up</td>
     <td>In progress</td>
   </tr>
   <tr>
@@ -117,7 +116,7 @@ Norlin Walk
   </tr>
   <tr>
     <th>Pre-conditions:</th>
-    <td colspan=3>Ablility to access the web application through local server</td>
+    <td colspan=3>Able to access the web application and search valid book title</td>
   </tr>
   <tr>
     <th>Post-conditions:</th>
@@ -130,18 +129,18 @@ Norlin Walk
     <th>Comments</th>
   </tr>
   <tr>
-    <td>1. Valid title of a book is entered in the "Search by title of book" bar</td>
-    <td>If the book exists in the application database, the web application loads the next page that show the arrows and the gyroscopes on the way to the destination</td>
-    <td>In progress</td>
-  </tr>
-  <tr>
-    <td>2. Follow the arrows that lead to final destination by pressing them</td>
+    <td>1. Follow the arrows that lead to final destination by pressing them</td>
     <td>Each time an arrow is pressed, different gyroscope is loaded on to the application</td>
     <td>In progress</td>
   </tr>
   <tr>
-    <td>3. When reached at the final destination, locate the book</td>
-    <td>At the final destination, the bookshelf location of the book is noted instead of gyroscope</td>
+    <td>2. Keep following the arrows and reach the final destination where the book is located</td>
+    <td>At the final destination, the bookshelf location of the book is noted</td>
+    <td>In progress</td>
+  </tr>
+  <tr>
+    <td>3. Click on the arrow in the direction of the previous path</td>
+    <td>Able to go back to previous location</td>
     <td>In progress</td>
   </tr>
   <tr>
