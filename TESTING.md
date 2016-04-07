@@ -19,7 +19,12 @@ Norlin Walk
 
 ## Automated Tests
 
+Used [QUnit](https://qunitjs.com/) to create automated test cases for [Javascript file](https://github.com/mita4829/Project3308/blob/master/UnitTest/TestMainJS.js).
 
+To run the test cases, download and open the [HTML file](https://github.com/mita4829/Project3308/blob/master/UnitTest/unitTest.html).
+
+### Unit Testing Output
+![Unit Test](/UnitTest/UnitTest.png)
 
 
 ## User Acceptance Tests
