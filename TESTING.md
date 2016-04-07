@@ -37,7 +37,7 @@ To run the test cases, download and open the [HTML file](https://github.com/mita
   </tr>
   <tr>
     <th>Pre-conditions:</th>
-    <td colspan=3>User has his/her machine and a browser ready</td>
+    <td colspan=3>User has his/her android smartphone or an Iphone and a browser ready</td>
   </tr>
   <tr>
     <th>Post-conditions:</th>
@@ -51,12 +51,13 @@ To run the test cases, download and open the [HTML file](https://github.com/mita
   </tr>
   <tr>
     <td>1. Enter the url "www.norlinwalk.herokuapp.com" in the browser</td>
-    <td>The first page of the web application is displayed</td>
+    <td>A web application with a gyroscope near the Norlin library main entrance displayed. "Search by title of book", "Starting Location" and "Search" bars displayed.</td>
     <td> </td>
   </tr>
   <tr>
-    <td>2. Tap on any of the bars</td>
-    <td>Able to enter in the book title, select starting location</td>
+    <td>2. Hold the phone in landscape direction and rotate while holding the phone</td>
+    <td>Gyroscope verified to work properly</td>
+    <td> </td>
   </tr>
   <tr>
     <th>Test Result:</th>
@@ -80,7 +81,7 @@ To run the test cases, download and open the [HTML file](https://github.com/mita
   </tr>
   <tr>
     <th>Post-conditions:</th>
-    <td colspan=3>Able to load the next gyroscope in the application when search valid book title</td>
+    <td colspan=3>Able to control "Starting Location" bar</td>
   </tr>
   <tr>
     <th rowspan=4>Event Flow:</th>
@@ -89,19 +90,19 @@ To run the test cases, download and open the [HTML file](https://github.com/mita
     <th>Comments</th>
   </tr>
   <tr>
-    <td>1. Valid title of a book is entered in the "Search by title of book" bar</td>
-    <td>If the book exists in the application database, the web application loads the next page that show the arrows and the gyroscopes on the way to the destination</td>
+    <td>1. Leaving other bars as it was, click the "Starting Location" bar</td>
+    <td>Option selection with "Starting Location", "West Entrance", "East Entrance", "Current Location" displayed</td>
     <td> </td>
   </tr>
   <tr>
-    <td>2. Select "Starting Location" and choose one of the locations</td>
-    <td>Options pop up: "West Entrance", "East Entrance" and "Current Location. If clicked, starting location set"</td>
-    <td> </td>
+    <td>2. Scroll down to the location the user wants to choose and adjust</td>
+    <td>The "Starting Location" bar now displays the location chosen</td>
+    <td>If "West Entrance" chosen, "Starting Location" bar now displays "West Entrance"</td>
   </tr>
   <tr>
     <td>3. Click on "Search"</td>
-    <td>Web Application loaded to the first path to the book. If clicked on before tying in the book title, message saying that "No book title given." pops up</td>
-    <td>In progress</td>
+    <td>Error message saying that "No book title given." pops up</td>
+    <td> </td>
   </tr>
   <tr>
     <th>Test Result:</th>
@@ -125,7 +126,7 @@ To run the test cases, download and open the [HTML file](https://github.com/mita
   </tr>
   <tr>
     <th>Post-conditions:</th>
-    <td colspan=3>Able to locate where the book to be searched is</td>
+    <td colspan=3>Able to keep track and locate where the book to be searched is</td>
   </tr>
   <tr>
     <th rowspan=4>Event Flow:</th>
