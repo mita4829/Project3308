@@ -122,11 +122,11 @@ To run the test cases, download and open the [HTML file](https://github.com/mita
   </tr>
   <tr>
     <th>Pre-conditions:</th>
-    <td colspan=3>Able to access the web application and search valid book title</td>
+    <td colspan=3>The web application, Norlin Walk is visible with Starting Location chosen</td>
   </tr>
   <tr>
     <th>Post-conditions:</th>
-    <td colspan=3>Able to keep track and locate where the book to be searched is</td>
+    <td colspan=3>Able to control "Search by title of book" bar and search and load new gyroscope page</td>
   </tr>
   <tr>
     <th rowspan=4>Event Flow:</th>
@@ -135,19 +135,19 @@ To run the test cases, download and open the [HTML file](https://github.com/mita
     <th>Comments</th>
   </tr>
   <tr>
-    <td>1. Follow the arrows that lead to final destination by pressing them</td>
-    <td>Each time an arrow is pressed, different gyroscope is loaded on to the application</td>
-    <td>In progress</td>
+    <td>1. Click "Search by title of book" bar</td>
+    <td>Keyboard pops up so that letters can be entered</td>
+    <td> </td>
   </tr>
   <tr>
-    <td>2. Keep following the arrows and reach the final destination where the book is located</td>
-    <td>At the final destination, the bookshelf location of the book is noted</td>
-    <td>In progress</td>
+    <td>2. Enter "Harry Potter"</td>
+    <td>Now "Search by title of book" bar displays "Harry Potter"</td>
+    <td> </td>
   </tr>
   <tr>
-    <td>3. Click on the arrow in the direction of the previous path</td>
-    <td>Able to go back to previous location</td>
-    <td>In progress</td>
+    <td>3. Click on the "Search" bar</td>
+    <td>A new gyroscope page loaded on the application, which is the first path to the book "Harry Potter"</td>
+    <td> </td>
   </tr>
   <tr>
     <th>Test Result:</th>
@@ -155,6 +155,6 @@ To run the test cases, download and open the [HTML file](https://github.com/mita
   </tr>
   <tr>
     <th>Notes:</th>
-    <td colspan=3>In progress</td>
+    <td colspan=3> </td>
   </tr>
 </table>
