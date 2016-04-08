@@ -1,21 +1,7 @@
 //Main javascript for home page
 function onload(){ //website calls this function when the website first loads up
     setDeviceUserAgent();
-    var isiPhone = checkIfiPhone();
-    requestXYZ(isiPhone);//turn on pano if not android
-    
-}
-
-//firstEvents and secondEvents functions are here just to keep things organized. Use them if you like, or use it to call other functions you've made
-function firstEvents(){ //website runs this function after a certain point after the page loads
-    
-}
-
-function secondEvents(){
-    
-}
-
-function lastEvents(){
+    requestXYZ();//turn on pano if not android
     
 }
 
@@ -42,7 +28,7 @@ function showPosition(position){
 function searchForBook(location,title){
     var startingLocation = location;//work here giving better start locations
     var bookTitle = escape(title);
-    if(startingLocation == ""){//if values are missing
+    if(startingLocation == "null"){//if values are missing
         alert("Starting location not given.");
         return;
     }else if(bookTitle == ""){
@@ -54,9 +40,9 @@ function searchForBook(location,title){
     
 }
 
-function requestXYZ(isiPhone){
+function requestXYZ(){
     //iPhone complete
-    if(isiPhone){
+    if(true){
         window.addEventListener("deviceorientation", function(event){
             var x = Math.round(event.gamma);
             var y = Math.round(event.beta);
@@ -85,9 +71,7 @@ function setCookies(){/*Function to save info into a cookie so transferring web 
 
 function setDeviceUserAgent(){
     var mobile = checkIfMobile();
-    if(mobile){
-        //document.getElementById('notMobile').style.display = 'none';
-    }else{
+    if(!mobile){
         document.getElementById('userFormToSearchBooks').style.display = 'none';
         document.getElementById('notLandscape').style.display = 'none';
         document.getElementById('locationServices').style.display = 'none';
@@ -96,16 +80,10 @@ function setDeviceUserAgent(){
     }
 }
 
-function checkIfiPhone(){
-    var android = (/Android/i.test(navigator.userAgent));
-    if(!android){
-        //assuming most people have iPhones or other phones but android
-        
-        return true;
-    }else{
-        return false;
-    }
+function force(){
+    window.scrollTo(1,0);
 }
+
 
 function escape(string){
     //function to sanitize string removing all spaces and non-alpha/num char and lowercase all alpha

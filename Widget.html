@@ -13,15 +13,14 @@
    
 <body onload="onload()">
     
-    <div id="container">
-       
-    </div>
     <div id="navigationBar">
         <!--Put navigation buttons here e.g. <back>-->
+        <p class="navigation" id="Prev" onclick="getPrevious()">Previous</p>
+        <p class="navigation" id="Next" onclick="getNext()">Next</p>
     </div>
     
     <div onclick="getNextImage()">
-       <img src="Panos/18.jpg" id="pano">
+       <img src="Panos/home.jpg" id="pano">
     </div>
     <div id="notLandscape">
         <p>Please turn your phone into landscape mode</p>

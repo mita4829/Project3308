@@ -4,47 +4,39 @@
 	<head>
         
         <title>NorlinWalk</title>
-        <link rel="stylesheet" type="text/css" href="CSS/index.css" media="screen and (orientation: landscape)">
-        <link rel="stylesheet" type="text/css" href="CSS/indexPortrait.css" media="screen and (orientation: portrait)">
+        <link rel="stylesheet" id="landscape" type="text/css" href="CSS/index.css" media="screen and (orientation: landscape)">
+        <link rel="stylesheet" id="portrait" type="text/css" href="CSS/indexPortrait.css" media="screen and (orientation: portrait)">
         <script src="JS/MainJS.js"></script>
 	</head>	
 	<body onload="onload()">
 
         <div id="navigationBar">
             <!--Put navigation buttons here e.g. <back>-->
+            <p id="dev">Norlin Walk (Beta 1.0)</p>
         </div>
        
        
         <div id="userFormToSearchBooks">
             <form id="userBookTitle"><!--form for searching books-->
-                <input type="text" id="searchBar" placeholder=" Search by title of book"/><!-- onkeydown part triggers button click when the user hits return-->
+                <input type="text" id="searchBar" placeholder=" Search by title of book"/>
             </form>
             
-            <select id="locationBar">
+            <select id="locationBar" onclick="force()">
                 <option value="null">Starting Location</option>
                 <option value="1">West Entrance</option>
                 <option value="12">East Entrence</option>
-                <option value="Current Location">Current Location</option>
             </select>
-            
-            <!-- <form id="userLocation"><!--form for searching books-->
-            <!--  <input type="text" id="locationBar" placeholder=" Starting location"/><!--onkeydown part triggers button click when the user hits return-->
+
             </form>
-            
-            <img src="UIImages/Location-Services.png" id="locationServices" onclick="getGeoLocation()">
-                <!-- <p id="debugPos">Null</p>-->
                 <button id="searchButton" onclick="searchForBook(document.getElementById('locationBar').value,document.getElementById('searchBar').value)">Search</button>
                 
         </div>
       
 
-       <!-- <div id="notMobile">
-            <img src="UIImages/NotMobile.jpg">
-            <p>Come back on your mobile device to view this site.</p>
-        </div>-->
-       
+
+       <div>
         <img src="Panos/home.jpg" id="pano">
-        
+        </div>
         <div id="notLandscape">
             
             <p>Please turn your phone to landscape mode</p>

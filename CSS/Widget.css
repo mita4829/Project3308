@@ -1,7 +1,5 @@
 html, body{
     background-color:rgba(40,43,53,1);
-    height: 100%;
-    width: 100%;
 }
 #navigationBar{
     position:fixed;
@@ -64,13 +62,6 @@ html, body{
     z-index:1;
 }
 
-#container{
-    position:fixed;
-    height:15%;width:100%;
-    top:0;left:0;
-    z-index:3;
-}
-
 #pano{
     position:absolute;
     z-index:0;
@@ -80,16 +71,17 @@ html, body{
 #notLandscape{
     display:none;
 }
-#notLandscape, p{
-    position:fixed;
-    left:50%;transform: translate(-50%, -50%);
-    font-family:Helvetica,Arial;
-    font-size:26px;
-    color:white;
-    
-    
+#Prev{
+    position:absolute;
+    top:5%;left:2%;
+    font-family:Helvetica, Helvetica, Ariel;
+    font-size:24px;
+    color:rgba(235,235,235,1);
 }
-
-#continue{
-    display:none;
+#Next{
+    position:absolute;
+    top:5%;left:90%;
+    font-family:Helvetica, Helvetica, Ariel;
+    font-size:24px;
+    color:rgba(235,235,235,1);
 }
