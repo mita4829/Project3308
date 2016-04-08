@@ -41,7 +41,7 @@ To run the test cases, download and open the [HTML file](https://github.com/mita
   </tr>
   <tr>
     <th>Post-conditions:</th>
-    <td colspan=3>The initial web application page of the Norlin library gyroscope and search book, set starting location and search barshown</td>
+    <td colspan=3>The initial web application page of the Norlin library gyroscope and "Search by title of book", "Starting Location" and "Search" bar shown</td>
   </tr>
   <tr>
     <th rowspan=3>Event Flow:</th>
