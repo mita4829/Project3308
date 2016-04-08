@@ -1,6 +1,7 @@
 //Main javascript for home page
 function onload(){ //website calls this function when the website first loads up
     setDeviceUserAgent();
+    force();
     requestXYZ();//turn on pano if not android
     
 }
@@ -48,16 +49,16 @@ function requestXYZ(){
             var y = Math.round(event.beta);
             var z = Math.round(event.alpha);
             if(x >= 20){
-                document.getElementById('pano').style.left = (7.5*z)-3600+"px";
-                document.getElementById('blur').style.left = (7.5*z)-3600+"px";//All panos need a constant to prevent the jumping effect when viewing
-                                document.getElementById('debugPos').innerHTML = z;
+                document.getElementById('pano').style.left = (8*z)-3600+"px";
+                document.getElementById('debugPos').innerHTML = z;
             }else if(x <= -20){
-                document.getElementById('pano').style.left = 7.5*(z+180)-3600+"px";
-                document.getElementById('blur').style.left = 7.5*(z+180)-3600+"px";
+                document.getElementById('pano').style.left = 8*(z-180)-3600+"px";
             }
         }, true);
     }
 }
+
+
 
 function checkIfMobile(){
     var mobile = (/Mac|Windows|Linux|Android|webOS|iPhone|iPad|iPod|Windows Phone|Kindle|IEMobile/i.test(navigator.userAgent)); //return boolean: Check to see if it's a mobile device, if false, disable site.
