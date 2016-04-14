@@ -50,7 +50,7 @@ To run the test cases, download and open the [HTML file](https://github.com/mita
     <th>Comments</th>
   </tr>
   <tr>
-    <td>1. Enter the url "www.norlinwalk.herokuapp.com" in the browser</td>
+    <td>1. Enter the url "https://norlinwalk.herokuapp.com" in the browser</td>
     <td>A web application with a gyroscope near the Norlin library main entrance displayed. "Search by title of book", "Starting Location" and "Search" bars displayed.</td>
     <td> </td>
   </tr>
