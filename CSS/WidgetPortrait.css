@@ -7,7 +7,7 @@ p{
     color:grey;
     font-weight:lighter;
     font-family:Helvetica, Helvetica, Ariel;
-    font-size:20px;
+    font-size:3em;
 }
 
 #userFormToSearchBooks{ /* position of the form */
@@ -19,7 +19,7 @@ p{
 #navigationBar{/* Header bar with all the UI buttons */
     position: fixed;
     top:0px;left:0px;right:0px;
-    height:50px;
+    height:10%;
     width:110%;
     background-color:rgba(242,242,242,1);
     outline-style: solid;
@@ -30,7 +30,7 @@ p{
 #footerBar{ /* Footer bar with other navaigation buttons */
     position: fixed;
     bottom:0px;left:0px;right:0px;
-    height:50px;
+    height:10%;
     width:110%;
     background-color:rgba(242,242,242,1);
     outline-style: solid;
@@ -43,15 +43,25 @@ p{
 }
 #notLandscape{
     position: absolute;
-    top:50%;left:50%;
-    width:100%;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
     z-index:0;
 }
-#navigationBar p{
-    position:absolute;
-    color:rgb(0, 131, 254);
-    font-weight:400;
-    font-size:24px;
-    top:-25px;right:10%;
+
+#title{
+    position:fixed;
+    color:black;
+    font-family:Helvetica Neue;
+    font-weight:500;
+    top:2%;left:50%;
+    transform: translate(-50%, -50%);
+    z-index:2;
+}
+
+#pano{
+    display:none;
+}
+.navigation{
+    display:none;
 }

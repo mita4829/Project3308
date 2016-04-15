@@ -1,0 +1,112 @@
+body{
+    background-color:rgba(40,43,53,1);
+    margin: 0px;
+    padding: 0px;
+}
+
+
+
+#searchButton{
+    position:absolute;
+    height:15%;
+    max-height:20%;min-height:10%;
+    width:80%;
+    top:50%;left:10%;
+    background-color: rgba(35,35,35,0.5);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom-right-radius:20px;
+    border-bottom-left-radius:20px;
+    border-color:transparent;
+    color:white;
+    outline-color:rgba(178,178,178,1);
+    font-size:24px;
+    z-index:1;
+}
+#searchBar{ /* style for the search bar */
+    position:absolute;
+    top:35%;left:10%;
+    height:14.5%;
+    max-height:20%;min-height:10%;max-width:40%;
+    width:39.5%;
+    border-top-left-radius:20px;
+    background-color: rgba(35,35,35,0.5);
+    -webkit-backdrop-filter: blur(10px);
+    border-color: transparent;
+    outline-color:rgba(178,178,178,1);
+    font-size: 24px;
+    color:white;
+    font-weight:300; /* thickness of font */
+    z-index:1;
+}
+#navigationBar{
+    position:fixed;
+    top:0px;left:0px;
+    width:100%;
+    height:15%;
+    background-color: rgba(35,35,35,0.8);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow:2px 0px 20px;
+    outline-style: solid;
+    outline-width: 1px;
+    outline-color:rgba(82,84,91,1);
+    z-index:2;
+}
+#footerBar{
+    position:fixed;
+    left:0px;bottom:-1px;
+    width:100%;
+    height:15%;
+    background-color: rgba(35,35,35,0.8);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow:-2px 0px 10px;
+    outline-style: solid;
+    outline-width: 1px;
+    outline-color:rgba(82,84,91,1);
+    z-index:2;
+}
+#locationBar{
+    
+    position:absolute;
+    top:35%;left:50%;
+    height:14.5%;
+    max-height:20%;min-height:10%;max-width:40%;
+    width:40%;
+    border-top-right-radius:20px;
+    background-color: rgba(35,35,35,0.5);
+    -webkit-backdrop-filter: blur(10px);
+    border-color: transparent;
+    -webkit-appearance:none;
+    font-size: 24px;
+    color:white;
+    font-weight:300;
+    z-index:1;
+}
+
+
+
+#pano{
+    position:absolute;
+    z-index:0;
+    height:100%;
+    top:0%;left:0px;bottom:15%;
+}
+/* for yee who copies this blurring effect css code is a fool...*/
+
+
+
+#locationServices{
+    position:absolute;
+    height:45px;left:2%;top:1%;
+    z-index:3;
+}
+
+#notLandscape{
+    display:none;
+}
+#Dev{
+    position:absolute;
+    top:5%;left:2%;
+    font-family:Helvetica, Helvetica, Ariel;
+    font-size:24px;
+    color:rgba(82,190,91,1);
+}

@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>Norlin Walk</title>
         <link rel="stylesheet" type="text/css" href="CSS/Widget.css" media="screen and (orientation: landscape)">
-            <script src="JS/Widget.js"></script>
-        <link rel="stylesheet" type="text/css" href="CSS/WidgetRotate.css" media="screen and (orientation: portrait)">
+        <link rel="stylesheet" type="text/css" href="CSS/WidgetPortrait.css" media="screen and (orientation: portrait)">
+         <script src="JS/pathFinder.js"></script>
          <script src="JS/Widget.js"></script>
 
-        </head>
+    </head>
     
     
    
-<body onload="requestXYZ()">
+<body onload="onload()">
     
     <div id="navigationBar">
         <!--Put navigation buttons here e.g. <back>-->
-        <div id="container">
-        </div>
+        <p class="navigation" id="Prev" onclick="getPrevious()">Previous</p>
+        <p class="navigation" id="Next" onclick="getNext()">Next</p>
     </div>
     
-    <div onclick="demo();">
-       <img src="Panos/12.jpg" id="pano">
+    <div onclick="getNextImage()">
+       <img src="Panos/home.jpg" id="pano">
     </div>
     <div id="notLandscape">
         <p>Please turn your phone into landscape mode</p>
