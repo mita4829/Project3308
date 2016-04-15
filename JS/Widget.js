@@ -65,7 +65,11 @@ function searchForBook(location,title){
 function beginDataParse(data){
     if(data){
         path = n.dijkstra(start.toString(),endlocation.toString());
-	document.getElementById('pano').src = "PanoArrows/"+path[0]+".jpg";//Beta 1.0 before arrows
+        try{
+            document.getElementById('pano').src = "PanoArrows/"+path[0]+"_"+path[1]+".jpg";//Beta 1.0 before arrows
+        }catch(err){
+            alert("Your book was not found in our database ☹️");
+        }
     }
 }
 
@@ -81,7 +85,7 @@ function getNextImage(){
 
 function getPrevious(){
     if(inc >= 1){
-        document.getElementById('pano').src = "PanoArrows/"+path[inc-1]+"_"+path[inc]+"jpg";
+        document.getElementById('pano').src = "PanoArrows/"+path[inc-1]+"_"+path[inc]+".jpg";
         inc = inc - 1;
     }else{
         alert("You have arrived back at you're starting location!");
@@ -90,7 +94,8 @@ function getPrevious(){
 
 function getNext(){
     if(inc+1 < path.length-1){
-        document.getElementById('pano').src = "PanoArrows/"+path[inc+1]+"_"+path[inc+2]+"jpg";
+        document.getElementById('pano').src = "PanoArrows/"+path[inc+1]+"_"+path[inc+2]+".jpg";
+        inc = inc + 1;
     }else{
         alert("You have arrived");
     }
