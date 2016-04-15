@@ -242,3 +242,4 @@ function nSearch() {
     });
 }
 
+var n = new nSearch();
