@@ -65,6 +65,8 @@ function searchForBook(location,title){
 function beginDataParse(data){
     if(data){
         path = n.dijkstra(start.toString(),endlocation.toString());
+        alert(endlocation);
+        alert(path);
         try{
             document.getElementById('pano').src = "PanoArrows/"+path[0]+"_"+path[1]+".jpg";//Beta 1.0 before arrows
         }catch(err){
