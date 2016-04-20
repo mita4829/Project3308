@@ -66,7 +66,7 @@ function beginDataParse(data){
     if(data){
         path = n.dijkstra(start.toString(),endlocation.toString());
         alert(endlocation);
-        alert(n.dijkstra("1","25"));
+        document.write(path);
         document.getElementById('pano').src = "PanoArrows/"+path[0]+"_"+path[1]+".jpg";//Beta 1.0 before arrows
     }
 }
