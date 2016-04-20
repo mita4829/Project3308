@@ -67,7 +67,8 @@ function beginDataParse(data){
         path = n.dijkstra(start.toString(),endlocation.toString());
         //alert(endlocation);
         //document.write(n.dijkstra("1","7"));
-        if(endlocation != "undefined"){
+        alert(endlocation);
+        if(endlocation){
         document.getElementById('pano').src = "PanoArrows/"+path[0]+"_"+path[1]+".jpg";//Beta 1.0 before arrows
         }else{
             alert("You book doesn't seem to be in our database, ☹️. Here's a picture of Dalton instead.");
