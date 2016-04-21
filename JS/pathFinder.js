@@ -177,6 +177,7 @@ function nSearch() {
                    14: 1
                    });
     this.addVertex('14', {
+                   5: 1,
                    8: 1,
                    13: 1
                    });
