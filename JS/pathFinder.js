@@ -243,4 +243,5 @@ function nSearch() {
                    26: 1
                    });
 }
+var n = new nSearch();
 
