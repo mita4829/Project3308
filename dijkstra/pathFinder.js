@@ -170,7 +170,8 @@ function nSearch() {
     this.addVertex('12', {
 	3: 1,
     11: 1,
-    13: 1
+    13: 1,
+    19: 1,
     });
     this.addVertex('13', {
 	10: 1,
@@ -197,12 +198,14 @@ function nSearch() {
     this.addVertex('18', {
 	17: 1,
 	19: 1,
+    24: 1,
     });
     this.addVertex('19', {
         17: 1,
         18: 1,
         20: 1,
         12: 1,
+        23: 1,
     });
     this.addVertex('20', {
 	15: 1,
