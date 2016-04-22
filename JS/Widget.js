@@ -99,9 +99,7 @@ function getNext(){
         document.getElementById('pano').src = "PanoArrows/"+path[inc]+"_"+path[inc+1]+".jpg";
         inc = inc + 1;
     }else{
-        
         document.getElementById('pano').src = "PanoArrows/"+path[path.length-1]+".jpg";
-        alert(info);
         document.getElementById('dev').value = info;
         alert("You have arrived");
     }
