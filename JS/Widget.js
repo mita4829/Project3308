@@ -101,7 +101,8 @@ function getNext(){
     }else{
         
         document.getElementById('pano').src = "PanoArrows/"+path[path.length-1]+".jpg";
-        document.getElementById('dev').text = info;
+        alert(info);
+        document.getElementById('dev').value = info;
         alert("You have arrived");
     }
 }
