@@ -16,7 +16,7 @@
         $shelf = pg_query($conn,"SELECT text FROM library WHERE title='".$bookName."';");
         
         $val = pg_fetch_result($result, 0, 0);
-        $text = pg_fetch_result($result, 0, 0);
-        echo "<script type='text/javascript'>endlocation=".$val.";info='Shelf: '".$text.";start=".$start.";inc=1;path=[]</script>";
+        $text = pg_fetch_result($shelf, 0, 0);
+        echo "<script type='text/javascript'>endlocation=".$val.";info='Shelf: ".$text."';start=".$start.";inc=1;path=[]</script>";
     }
 ?>
