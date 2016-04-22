@@ -28,10 +28,10 @@ function requestXYZ(isiPhone){
             var y = Math.round(event.beta);
             var z = Math.round(event.alpha);
             if(x >= 20){
-                document.getElementById('pano').style.left = (7*z)-3600+"px";//All panos need a constant to prevent the jumping effect when viewing panos.
+                document.getElementById('pano').style.left = (8*z)-3600+"px";//All panos need a constant to prevent the jumping effect when viewing panos.
                 document.getElementById('debugPos').innerHTML = z;
             }else if(x <= -20){
-                document.getElementById('pano').style.left = 7*(z+180)-3600+"px";
+                document.getElementById('pano').style.left = 8*(z+180)-3600+"px";
             }
         }, true);
     }
@@ -96,7 +96,7 @@ function getPrevious(){
 
 function getNext(){
     if(inc+1 < path.length-1){
-        document.getElementById('pano').src = "PanoArrows/"+path[inc+1]+"_"+path[inc+2]+".jpg";
+        document.getElementById('pano').src = "PanoArrows/"+path[inc]+"_"+path[inc+1]+".jpg";
         inc = inc + 1;
     }else{
         alert("You have arrived");
