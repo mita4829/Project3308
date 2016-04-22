@@ -17,6 +17,6 @@
         
         $val = pg_fetch_result($result, 0, 0);
         $text = pg_fetch_result($result, 0, 0);
-        echo "<script type='text/javascript'>endlocation=".$val.";info=\"Shelf:\".".$info.";start=".$start.";inc=1;path=[]</script>";
+        echo "<script type='text/javascript'>endlocation=".$val.";info='Shelf: '".$info.";start=".$start.";inc=1;path=[]</script>";
     }
 ?>
