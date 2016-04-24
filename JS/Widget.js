@@ -29,10 +29,10 @@ function requestXYZ(isiPhone){
             var y = Math.round(event.beta);
             var z = Math.round(event.alpha);
             if(x >= 20){
-                document.getElementById('pano').style.left = (7*z)-3600+"px";//All panos need a constant to prevent the jumping effect when viewing panos.
+                document.getElementById('pano').style.left = (8*z)-3600+"px";//All panos need a constant to prevent the jumping effect when viewing panos.
                 document.getElementById('debugPos').innerHTML = z;
             }else if(x <= -20){
-                document.getElementById('pano').style.left = 7*(z+180)-3600+"px";
+                document.getElementById('pano').style.left = 8*(z+180)-3600+"px";
             }
         }, true);
     }
@@ -66,11 +66,13 @@ function searchForBook(location,title){
 function beginDataParse(data){
     if(data){
         path = n.dijkstra(start.toString(),endlocation.toString());
-        try{
-            document.getElementById('pano').src = "PanoArrows/"+path[0]+"_"+path[1]+".jpg";//Beta 1.0 before arrows
-        }catch(err){
-            alert("Your book was not found in our database ☹️");
+        if(endlocation != 'dne'){
+        document.getElementById('pano').src = "PanoArrows/"+path[0]+"_"+path[1]+".jpg";//Beta 1.0 before arrows
+        }else{
+            alert("You book doesn't seem to be in our database, ☹️. Here's a picture of Dalton instead.");
+            document.getElementById('pano').src = "PanoArrows/3.jpg";
         }
+        
     }
 }
 /** */
@@ -95,10 +97,11 @@ function getPrevious(){
 /** */
 function getNext(){
     if(inc+1 < path.length-1){
-        document.getElementById('pano').src = "PanoArrows/"+path[inc+1]+"_"+path[inc+2]+".jpg";
+        document.getElementById('pano').src = "PanoArrows/"+path[inc]+"_"+path[inc+1]+".jpg";
         inc = inc + 1;
     }else{
-        alert("You have arrived");
+        document.getElementById('pano').src = "PanoArrows/"+path[path.length-1]+".jpg";
+        document.getElementById('dev').innerHTML = info;
     }
 }
 
