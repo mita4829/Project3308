@@ -1,3 +1,4 @@
+/**
 /********************************************************************************************************************
  * This is an implementation of Dijkstra's Algorithm in JavaScript.                                                 *
  * Lots of this is taken from https://github.com/mburst/dijkstras-algorithm/blob/master/dijkstras.js                *
@@ -9,7 +10,7 @@
  * n.dijkstra(start,finish) should return the array                                                                 *
  ********************************************************************************************************************/
 
-// basic priority queue. only thing making it a priority queue is we can sort it after adding a node
+/** basic priority queue. only thing making it a priority queue is we can sort it after adding a node */
 function PriorityQueue() {
     this._nodes = [];
     
@@ -45,13 +46,13 @@ function nSearch() {
     // initial blank vertice array
     this.vertices = {};
     
-    // for building the graph
-    // the graph is just an array of arrays. if this were c++ you could call them vectors, but its not...
+    /** for building the graph
+    // the graph is just an array of arrays. if this were c++ you could call them vectors, but its not... */
     this.addVertex = function (name, edges) {
         this.vertices[name] = edges;
     };
     
-    // start of pathfinding. This is dijkstra's algorithm
+    /** start of pathfinding. This is dijkstra's algorithm */
     this.dijkstra = function (start, finish) {
         // create a new empty priority queue for nodes to be added to.
         // The current node gets added and then its neighbors are pushed in. The highest priority goes on top.
